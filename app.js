@@ -378,7 +378,7 @@ app.post('/profiles',function (req,res) {
 //login with filter and session
 
 var sessionID = null;
-app.post('/login',function (req,res) {
+app.post('/login',function (req,res,result) {
     console.log("login reaches here");
     User.findOne({number: req.body.number}).exec(function (err,result) {
         if(err){
@@ -403,9 +403,11 @@ app.post('/login',function (req,res) {
                                 res.send({
                                     status: "success",
                                     message: "successfully login",
-                                    number: req.session.userID
+                                    number: req.session.userID,
+                                    data : result
                                 });
                                 res.end();
+
                             }
                         }
                         else{
