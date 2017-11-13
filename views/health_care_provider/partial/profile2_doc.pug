@@ -1,0 +1,183 @@
+//- PROFILE STEP 3 FOR DOCTOR
+div.collection#main_profile_doctor
+    div.collection-item.dismissable
+        div.row
+            .col.s12.m12.l9.offset-l3
+                span.flow-text Dr. #{data.name}
+                br
+                br
+                span.flow-text Profile is not complete yet
+    div.collection-item.dismissable
+        div.row
+            div.col.s12.m12.l9.offset-l3
+                span.flow-text Profile Completeness
+                br
+                br
+                div#test-slider
+                p Complete Your Profile in 3 Easy steps
+
+        div.row
+            div.col.s12.m12.l10.offset-l2
+                ul.tabs
+                    li.tab.active.col.s4
+                        a.blue-text.darken-2#tab1(href='#basic_detail' data-balloon-pos="down" data-balloon="Basic Details" data-delay="50") Basic Details
+                    li.tab.col.s4
+                        a.blue-text.darken-2#tab2(href='#edu_special' data-balloon-pos="right" data-balloon="Education & Specialization" data-delay="50") Education & Specialization
+                    li.tab.col.s4
+                        a.blue-text.darken-3#tab3(href='#register_doc' data-balloon-pos="left" data-balloon="Registration & Documents" data-delay="50") Registration & Documents
+
+    div.row#basic_detail
+        div.col.m12.l9.s12.offset-l3
+            form(name='form_basic_details' method='POST' action='#')
+                br
+                h3.center Personal and Contact Details
+                div.input-field.col.s12.m4.l4
+                    span
+                        | Title
+                        input#title(type='text' value='Dr.' readonly)
+                div.input-field.col.s12.m4.l4
+                    span
+                        | Name
+                        input(type="text" value=data.name readonly)
+                div.input-field.col.s12.m4.l4
+                    span
+                        | Mobile Number &nbsp
+                        span#f1 Verified
+                            i.material-icons.teal-text.left done
+                        input.validate#mobNo(type='text', value=data.number readonly)
+                div.input-field.col.s12.m4.l4
+                    span
+                        | Email ID  &nbsp
+                        span#f2 Verified
+                            i.material-icons.teal-text.left done
+                        input.validate#email(type='email', value=data.email readonly)
+                div.input-field.col.s12.m4.l4
+                    span
+                        | City
+                        input.validate#city(type='text' value=data.city readonly)
+                div.col.s12.m4.l4
+                    br
+                    span Gender:
+                        br
+                        div#gender
+                            input.validate.with-gap#g1(name="gender" type="radio" value="male" checked)
+                            label(for='g1') Male&nbsp
+                            input.validate.with-gap#g2(name="gender" type="radio" value='female')
+                            label(for='g2') Female&nbsp
+                            input.validate.with-gap#g3(name="gender" type="radio" value="other" )
+                            label(for="g3") Other
+                            br
+                            br
+                div.input-field.col.s12.m4.l4
+                    span
+                        | Years of Experience
+                        input.validate#year_of_experience(type='number' placeholder='years' required)
+                div.input-field.col.s12.m8.l8
+                    span
+                        | About You
+                        input.validate#about_you(type='text' required)
+
+                div.row
+                    div.col.s6.m4.l3.offset-l3.offset-m2
+                        input.button(type='reset')
+                    div.col.s6.m4.l3
+                        input.button#basic_details(type='submit' value='Submit' href='#edu_special')
+
+
+
+    div#edu_special
+        div.row
+            div.col.s12.m12.l9.offset-l3
+                form(name='form_education_specialization' method='POST' action='#')
+                    h3.center Education and Specialization
+                    br
+                    div.input-field.col.s12.m6.l3
+                        span
+                            | Qualification
+                            input#qualification(type='text' required)
+                    div.input-field.col.s12.m6.l3
+                        span
+                            | College Name
+                            input#college(type='text' required)
+                    div.input-field.col.s12.m6.l3
+                        span
+                            | Completion Year
+                            input#completion_year(type='text' placeholder='yyyy eg. 1962' required)
+                    div.input-field.col.s12.m6.l3
+                        span
+                            | Specialization
+                            input#specialization(type='text' value=data.specialization readonly)
+
+
+
+                    div.col.s6.m4.l3.offset-l4.offset-m2
+                        input.button(type='reset')
+                    div.col.s6.m4.l3
+                        input.button#education(type='submit' value='Submit' href='#register_doc')
+
+
+
+    div#register_doc
+        div.row
+            div.col.s12.m12.l9.offset-l3
+                form.upload_image1(action="#" , method='post' , enctype='multipart/form-data')
+                    h3.center Registration Details
+
+                    div.input-field.col.s12.m4.l4
+                        span
+                            | Council Reg. No.
+                            input#council_reg_no(type='text')
+                    div.input-field.col.s12.m4.l4
+                        span
+                            | Council Name
+                            input#council_name(type='text')
+                    div.input-field.col.s12.m4.l4
+                        span
+                            | Council Year
+                            input#council_year(type='date' placeholder='dd/mm/yyyy')
+                    div.col.s12.m10.l9.offset-m1
+                        input.button(type='reset')
+                    div.col.s6.m4.l3
+                        input.button#docs(type='submit' value='Submit' href='/health_care_provider?page=home')
+
+                form.upload_image2(action="#" , method='post' , enctype='multipart/form-data')
+                    div.col.s12.m12.l12
+                        h3.center Documents/Certificates
+                        br
+                        div.row
+                            h5.flow-text Please Upload your Documents
+
+                            li Aadhar Card/Driving Licence/Voter ID
+                            br
+                            div.col.s12.m12.l12
+                                div.file-field.input-field
+                                    div.btn.waves-effect.waves-light
+                                        span Browse
+                                        input#image1(type="file", name='myimage')
+                                    div.file-path-wrapper
+                                        div.col.s12.m6.l6
+                                            input.file-path.validate(type="text")
+                                        div.col.s12.m6.l6
+                                            img(src="" alt="Document image")
+
+                            br
+                            br
+                            br
+                            li Medical Council Certificates
+                            br
+                            div.col.s12.m12.l12
+                                div.file-field.input-field
+                                    div.btn.waves-effect.waves-light
+                                        span Browse
+                                        input#image2(type="file", name='myimage')
+                                    div.file-path-wrapper
+                                        div.col.s12.m6.l6
+                                            input.file-path.validate(type="text")
+                                        div.col.s12.m6.l6
+                                            img(src="http://localhost:4000/images/"+profile_image alt="Certificate image")
+
+
+                    div.col.s6.m4.l3.offset-l4.offset-m2
+                        input.button(type='reset')
+                    div.col.s6.m4.l3
+                        input.button#certificate(type='submit' value='Submit' href='/health_care_provider?page=home')

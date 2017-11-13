@@ -1,0 +1,60 @@
+div#profile1.collection
+    div.row
+        div.col.s8.m8.l8.offset-l3.offset-m2.offset-s2
+            h3.center Help Us to Know You Better
+    div.row
+        div.col.offset-s2.offset-l5.offset-m3
+            div.card.grey.lighten-1.hoverable(style="width: 90px, height: 70px")#doctor_card
+                div.card-title.center
+                    a.black-text.scale-transition(href='#profile2')
+                        i.fa.fa-user-md(style="font-size: 120px")
+            span1.center Doctor
+        div.col.offset-s2.offset-l1.offset-m2
+            div.card.grey.lighten-1.hoverable(style="width: 100px, height: 100px")#pharmacist_card
+                div.card-title.center
+                    a.black-text.scale-transition(href='#profile3')
+                        i.fa.fa-medkit(style="font-size: 120px")
+            span1.center Pharmacist
+
+
+//- ............PROFILE STEP 2 FOR DOCTOR..................
+
+div#profile2.collection
+    div.row
+        div.col.s8.m8.l8.offset-l3.offset-m2.offset-s2
+            form(name='profile_doctor_form', onsubmit='return validateForm();' method='POST', action='/health_care_provider?page=profile_doctor')
+                h3.center Enter Your Details
+                div.col.s12.m8.l8.offset-l2.offset-m2
+                    .input-field
+                        input.validate(type='text' required)#name
+                        label(for="name") Name
+                    .input-field#input_specialize_pharma
+                        input.validate(type='text' required)#specialization
+                        label(for="specialization") Specialization
+                    .input-field
+                        input.validate(type="text" required)#city
+                        label(for="city") City
+
+                div.col.s12.m4.l3.offset-l3.offset-m2
+                    input.button(type='reset')
+                div.col.s12.m4.l3.left
+                    input.button(type='submit', value='Create Profile')#create_profile1
+
+//- .......................PROFILE STEP 2 FOR PHARMACIST...................
+div#profile3.collection
+    div.row
+        div.col.s8.m8.l8.offset-l4.offset-m2.offset-s2
+            form(name='profile_pharmacist_form', method='POST', onsubmit='return validateForm()', action='/health_care_provider?page=profile_pharmacist')
+                h3.center Enter Your Details
+                div.col.s12.m8.l8.offset-l2.offset-m2
+                    .input-field
+                        input.validate(type='text' required)#name
+                        label(for="name") Name
+                    .input-field
+                        input.validate(type="text" required)#city
+                        label(for="city") City
+
+                div.col.s12.m4.l3.offset-l3.offset-m2
+                    input.button(type='reset')
+                div.col.s12.m4.l3.left
+                    input.button(type='submit', value='Create Profile')#create_profile2

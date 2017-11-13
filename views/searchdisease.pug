@@ -1,0 +1,11 @@
+doctype html
+html
+    head
+    body
+        h1 Enter medicine details
+        form(action='/searchdisease', method='POST')
+            | Search Disease :
+            input(type='text', name='disease')
+            br
+            br
+            input(type='submit', name='submit')

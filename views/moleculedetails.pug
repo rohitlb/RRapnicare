@@ -1,0 +1,61 @@
+doctype html
+
+html
+
+    body
+        h4 molecule details
+        table
+            tr
+                ul
+                    each val in data
+                        h3 Molecule name
+                        li  #{val.molecule_name}
+                        h3 Drug categories
+                        li  #{val.drug_categories}
+                        h3 description
+                        li #{val.description}
+                        h3 absorption
+                        li #{val.absorption}
+                        h3 distribution
+                        li #{val.distribution}
+                        h3 metabolism
+                        li #{val.metabolism}
+                        h3 excretion
+                        li #{val.excretion}
+                        h3 Adverse Reaction
+                        li #{val.side_effect}
+                        h3 Precaution
+                        li #{val.precaution}
+                        h3 drug_interaction
+                        li #{val.drug_interaction}
+                        h3 drug_interaction
+                        li #{val.drug_interaction}
+                        h3 Dosage
+                        li #{val.dosage}
+                        h3 Food
+                        li #{val.food}
+                        h3 List of contradictions
+                        h4 subhead
+                        li #{val.contradictions[0].subhead}
+                        h4 information
+                        li #{val.contradictions[1].info}
+
+
+
+
+
+
+
+
+
+//doctype html
+//
+//html
+//    head
+//        //title!= title
+//    body
+//        h1 Active Ingredients Details
+//        div
+//        h3 Molecule Name
+//        li #{data.molecule_name}
+

@@ -1,0 +1,80 @@
+doctype html
+html
+    include ./health_care_provider/partial/head
+
+    body
+        header
+            include ./health_care_provider/partial/header
+
+        main#navBar
+                nav(style="background-color: #660099;")
+                    div.nav-wrapper
+
+                                a.button-collapse#menubar.top-nav.hide-on-large-only(data-activates='side_navbar')
+                                    i.fa.fa-bars.fa-2x
+
+                                a.brand-logo.center-on-small-only.hide-on-large-only(href='/health_care_provider?page=home') ApniCare
+
+                                ul.right.hide-on-med-and-down
+                                    li
+                                        //div.col.s4.m4.l4.offset-l2.offset-m1.offset-s1
+                                        a.btn.btn-flat.white-text(href='/health_care_provider?page=notifications' data-balloon-pos="down" data-balloon="Notifications" data-delay="50" style="background-color: #660099")
+                                            i.material-icons.large(style="font-size: 35px") notifications
+                                    li
+                                        a.btn.btn-flat.white-text.dropdown-button(href='/health_care_provider?page=profile' data-activates='profile_drop' data-beloworigin='true' style="background-color: #660099")
+                                            i.material-icons.large(style="font-size: 35px") person
+
+                ul.dropdown-content#profile_drop
+                    li
+                        a(href="/health_care_provider?page=profile") My Profile
+                    li
+                        a(href='#') My Activity
+                    li
+                        a(href='#') Edit Profile
+                    li
+                        a(href="/logout") Logout
+
+        div.col.s12.m12.l8.offset-s4.offset-m4.offset-l4
+                if(page == 'home')
+                    include ./home_sideNav
+                else if(page == 'profile')
+                    include ./health_care_provider/partial/profile1
+                else if(page == 'profile_doctor')
+                    include ./health_care_provider/partial/profile2_doc
+                else if(page == 'profile_pharmacist')
+                    include ./health_care_provider/partial/profile3_pharma
+                else if(page == 'drug_data')
+                    include ./health_care_provider/partial/drugdata
+                else if(page == 'drug_data_form')
+                    include ./health_care_provider/partial/drug_data_form
+                else if(page == 'molecule_data')
+                    include ./health_care_provider/partial/molecule_data
+                else if(page == 'molecule_data_form')
+                    include ./health_care_provider/partial/molecule_data_form
+                else if(page == 'disease_data')
+                    include ./health_care_provider/partial/disease_data
+                else if(page == 'disease_data_form')
+                    include ./health_care_provider/partial/disease_data_form
+                else if(page == 'notifications')
+                    include ./health_care_provider/partial/notifications
+                else if(page == 'feedback_contributions')
+                    include ./health_care_provider/partial/feedback_contributions
+                else if(page == 'feedback_profile')
+                    include ./health_care_provider/partial/feedback_profile
+                else if(page == 'need_help')
+                    include ./health_care_provider/partial/help
+
+
+
+
+
+
+
+        //h2.center Health Care
+                //div.row
+                    div.col.s4.m4.l4.offset-s5.offset-m5.offset-l5
+                                a.btn.white-text(href='#')
+                                    i.material-icons.medium notifications
+                                a.btn.white-text(href='#')
+                                    i.material-icons.medium person
+

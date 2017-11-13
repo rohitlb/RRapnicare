@@ -1,0 +1,11 @@
+node_modules
+.idea
+package-lock.json
+active_ingredients.pug
+admin_home.pug
+dumpfile.pug
+login.pug
+register.pug
+login.js
+register.js
+uploads/**
