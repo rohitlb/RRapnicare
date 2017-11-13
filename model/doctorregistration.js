@@ -19,7 +19,7 @@ var Doctor = new mongoose.Schema({
     qualification : {typec :String},
     college : {type : String},
     completion_year : {type : String},
-    specialization : {type : String},
+    specialisation : {type : String},
     //registration and document
     council_registration_number : {type : String},
     council_name : {type : String},

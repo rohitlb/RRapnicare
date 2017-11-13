@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 
-
 var User = new mongoose.Schema({
     //general information
     name : {type:String},
@@ -8,17 +7,6 @@ var User = new mongoose.Schema({
     number : {type : String},
     password : {type:String},
     //featured information
-    // image : {
-    //     path: {
-    //         type: String,
-    //         required: true,
-    //         trim: true
-    //     },
-    //     originalname: {
-    //         type: String,
-    //         required: true
-    //     }
-    // },
     path: { type: String},
     dob : {type:String},
     gender : {type : String},

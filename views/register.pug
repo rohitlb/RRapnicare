@@ -1,0 +1,13 @@
+a.waves-effect.waves-light.btn-flat.right.modal-trigger(href='#modal1')#loginbut Login
+a.waves-effect.waves-light.btn-flat.right.modal-trigger(href='#modal1')#signupbut Signup
+
+#modal1.modal
+    .modal-content(style={padding: "0px",margin:"0px",border:"0"})
+        a(href="/")
+            i.modal-action.modal-close.material-icons.right close
+        include ./modalRegister
+//#modal2.modal
+    .modal-content(style={padding: "0px",margin:"0px",border:"0"})
+        i.material-icons.right close
+        include ./modalRegister
+
