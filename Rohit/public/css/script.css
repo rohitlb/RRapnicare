@@ -1,0 +1,92 @@
+span
+{
+    position: absolute;
+    right: 0px;
+    color: purple;
+    background-color: white;
+    font-size: 20px;
+
+}
+.btn
+{
+    background-color: mediumpurple;
+}
+#div1
+{
+    max-height: 90%;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    background-color: mediumpurple;
+}
+#div2
+{
+    max-height:90%;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    background-color: rebeccapurple;
+}
+.image1
+{
+    height:410px;
+    width:100%;
+    padding:0px;
+    margin:0px;
+    border: 0px;
+}
+.image2
+{
+    height:1px;
+    width:40%;
+}
+#healthCare,#Customer
+{
+    background-color: teal;
+    width:100%;
+}
+form
+{
+    background-color: white;
+    padding: 0px;
+    border: 0px;
+}
+.modal
+{   border-color: purple;
+    width: 45%;
+    max-height:90%;
+    top: 6%;
+    padding: 0px;
+    border: 1px;
+
+}
+.row
+{
+    //background-color: purple;
+    padding:0px;
+    border:0px;
+    margin-bottom: 0px;
+    //margin:0px;
+}
+.input-field
+{
+    background-color: white;
+}
+.textarea
+{
+    background-color: white;
+}
+.buttu
+{
+    background-color: mediumpurple;
+     width: 70%;
+}
+#providers
+{
+    color: teal;
+}
+#loginButton12,#NewtoApnicare
+{
+    color: purple;
+    background-color: whitesmoke;
+}

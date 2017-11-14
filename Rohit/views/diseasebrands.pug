@@ -1,0 +1,22 @@
+doctype html
+
+html
+
+    body
+        h4
+        table
+            tr
+                h2  Disease Brand
+                ul
+                    each val in data
+                        li
+                            h4 brand_name &nbsp #{val.brand_name}
+
+                               each dosage in val.dosage_id
+                                   h4 brand - #{val.brand_name}  &nbsp
+                                       h4 dosages - #{dosage.dosage_form} &nbsp
+
+                                           each strength in dosage.strength_id
+                                                h4 strength -  #{strength.strength}
+                                                h4 price - #{strength.price}
+

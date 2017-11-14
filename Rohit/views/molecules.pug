@@ -1,0 +1,13 @@
+doctype html
+
+html
+
+    body
+        h4
+        table
+            tr
+                h2 Total result
+                ol
+                    each val in data
+                        li
+                           a(href="/inmolecule?molecule=" + val.molecule_name) #{val.molecule_name}

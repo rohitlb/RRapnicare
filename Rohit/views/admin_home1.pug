@@ -1,0 +1,94 @@
+html
+    include ./head.pug
+        title ApniCare-Admin Panel
+
+    body
+        .navbar-fixed
+            nav.purple.hoverable
+                div.nav-wrapper
+                    //i.material-icons.left menu
+
+                    a.btn.purple.btn-flat.white-text.button-collapse.show-on-medium-and-up(data-activates='slide-out')
+                        i.material-icons menu
+                    a.brand-logo(href='#') ApniCare
+
+                    ul.right
+                        li
+                            a.dropdown-button.btn-flat.purple.white-text(href='#') Notifs
+                        li
+                            a.dropdown-button.btn-flat.purple.white-text(href='#') Admin
+
+                    ul.side-nav#slide-out
+                            li
+                                a(href='/admin') <b>Home</b>
+                                    i.material-icons.left.tiny home
+                            li
+                                a(href='#') <b>Customization</b>
+                                    i.material-icons.left.tiny dashboard
+                            li
+                                a(href='#') <b>Real Time</b>
+                                    i.material-icons.left.tiny access_time
+
+        div.row
+            div.col.s3.m3
+                ul.collapsible(data-collapsible='accordion')
+                    li
+                        div.collapsible-header(href='#')
+                            i.material-icons.left.tiny home
+                            span <b>Home</b>
+
+                    li
+                        div.collapsible-header(href='#')
+                            i.material-icons.left.tiny dashboard
+                            span <b>Customization</b>
+
+                    li
+                        div.collapsible-header(href='#')
+                            i.material-icons.left.tiny access_time
+                            span <b>Real Time</b>
+
+                    li
+                        div.collapsible-header
+                            i.material-icons.tiny.left developer_board1
+                            span <b>Manage Accounts</b>
+                        div.collapsible-body
+                            span
+                            div.container
+                                ul
+                                    li
+                                        a.black-text(href='#') User
+                                    li
+                                        a.black-text(href='#') Professional
+                                    li
+                                        a.black-text(href='#') Health Services
+                                    li
+                                        a.black-text(href='#') Sub-admin
+                                    li
+                                        a.black-text(href='#') Customer Care
+                                    li
+                                        a.black-text(href='#') Add roles
+                                            i.material-icons.left add_circle_outline
+
+
+                    li
+                        div.collapsible-header
+                                i.material-icons.tiny.left developer_board1
+                                span <b>Activity Queue</b>
+                        div.collapsible-body
+                                ul
+                                    li
+                                        a.hover.black-text(href='#') Drug Index Data
+                                    li
+                                        a.hover.black-text(href='#') Active Ingredients Data
+                                    li
+                                        a.black-text(href='#') Disease Data
+
+                    li
+                        div.collapsible-header(href='#')
+                            i.material-icons.left.tiny local_phone
+                            span <b>Request Call Back</b>
+
+                    li
+                        div.collapsible-header(href='#')
+                            i.material-icons.left.tiny feedback
+                            span <b>Feedback</b>

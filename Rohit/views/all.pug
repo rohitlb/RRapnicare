@@ -1,0 +1,32 @@
+doctype html
+
+html
+
+    body
+        h4
+        table
+            tr
+                h2 Total result
+                ol
+                  each val in data
+                      li
+                        h3 Brand
+                          each company in val.company_id
+                              h4 company &nbsp #{company.company_name}
+
+                        h4 brand #{val.brand_name}
+                        h4 categories #{val.categories}
+                                  ul
+                                    each dosage in val.dosage_id
+                                        h4 dosage &nbsp #{dosage.dosage_form}
+
+                                           ul
+                                               each price in dosage.strength_id
+                                                   h4 strength &nbsp #{price.strength}
+                                                   h4 price &nbsp #{price.price}
+                                                   h4 packaging &nbsp #{price.packaging}
+
+
+
+
+

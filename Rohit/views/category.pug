@@ -1,0 +1,15 @@
+doctype html
+
+html
+
+    body
+        h4
+        table
+            tr
+                h2 Total result
+                ol
+
+                    each val in data
+                        li
+                                h4 category &nbsp
+                                    a(href="/findbrand?brand="+val.categories) #{val.categories}
