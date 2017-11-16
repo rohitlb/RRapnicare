@@ -10,7 +10,7 @@ var Brand = new Schema({
     types : {type : String},
     dosage_id : [{type : Schema.Types.ObjectId , ref : 'dosage'}],
     company_id : [{type : Schema.Types.ObjectId , ref : 'company'}],
-    keywords :[{brandname, category, types, dosage type, company name}]
+    keywords :[{brandname, category, types, dosage , company name}]
 });
 
 module.exports = mongoose.model('brand',Brand);
