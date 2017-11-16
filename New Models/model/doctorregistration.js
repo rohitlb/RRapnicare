@@ -25,8 +25,9 @@ var Doctor = new mongoose.Schema({
     council_name : {type : String},
     council_registration_year : {type : String},
     document : [{name : {type : String},path : {type : String}}],
-    certificate : [{name : {type : String},path : {type : String}}]
+    certificate : [{name : {type : String},path : {type : String}}],
     //yet left
+    keywords : [{doc name, email,number,occupation,gender,city}]
 });
 
 module.exports = mongoose.model('Doctor',Doctor);

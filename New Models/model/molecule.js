@@ -19,7 +19,8 @@ var Molecule = new Schema({
     dosage : {type : String},
     food : {type : String},
     //list of contra indications
-    contradictions : [ {subhead : {type : String},info : {type : String}}]
+    contradictions : [ {subhead : {type : String},info : {type : String}}],
+    keywords : [{mol name, drug_cat}]
 });
 
 module.exports = mongoose.model('molecule',Molecule);
