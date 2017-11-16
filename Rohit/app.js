@@ -1239,6 +1239,8 @@ app.post('/medicine',function(req,res) {
     var warnings = req.body.warnings;
     var prescription = req.body.prescription;
     var molecule_strengths = req.body.molecule_strength;
+    var companyresult = null;
+    var brandresult = null;
     async.waterfall([
             function (callback) {
                 Company.findOne({company_name: company_name}, function (err, result) {
@@ -1251,45 +1253,45 @@ app.post('/medicine',function(req,res) {
                     }
                 });
             },
-            function (result,callback) {
-                if(result){
-                    req.session.companyresult = result._id;
-                    Brand.findOne({brand_name : brand_name},function (err,result1) {
-                        if(err){
+            function (result, callback) {
+                if (result) {
+                    companyresult = result._id;
+                    Brand.findOne({brand_name: brand_name}, function (err, result1) {
+                        if (err) {
                             console.log(err);
                             throw new Error(err);
                         }
-                        else{
-                            callback(null,result1);
+                        else {
+                            callback(null, result1);
                         }
                     });
                 }
-                else{
-                    Brand.findOne({brand_name :brand_name},function (err1,result1) {
-                        if(err1){
+                else {
+                    Brand.findOne({brand_name: brand_name}, function (err1, result1) {
+                        if (err1) {
                             console.log(err1);
                             throw new Error(err1);
                         }
-                        else{
-                            if(result1){
+                        else {
+                            if (result1) {
                                 res.send("other company cannot have same brand");
                             }
-                            else{
+                            else {
                                 var STRength = new Strength({
-                                    strength : strengtH,
-                                    potent_substance : {
-                                        name : active_ingredients,
-                                        molecule_strength : molecule_strengths
+                                    strength: strengtH,
+                                    potent_substance: {
+                                        name: active_ingredients,
+                                        molecule_strength: molecule_strengths
                                     },
-                                    packaging : packaging,
-                                    price : price,
-                                    dose_taken : dose_taken,
-                                    dose_timing : dose_timing,
-                                    warnings : warnings,
-                                    prescription : prescription
+                                    packaging: packaging,
+                                    price: price,
+                                    dose_taken: dose_taken,
+                                    dose_timing: dose_timing,
+                                    warnings: warnings,
+                                    prescription: prescription
                                 });
-                                STRength.save(function (err2,result2) {
-                                    if(err2){
+                                STRength.save(function (err2, result2) {
+                                    if (err2) {
                                         console.log(err2);
                                         throw new Error(err2);
                                     }
@@ -1299,41 +1301,57 @@ app.post('/medicine',function(req,res) {
                                             strength_id: result2._id
                                         });
                                         dosage.save(function (err3, result3) {
-                                            if(err3){
+                                            if (err3) {
                                                 console.log(err3);
-                                                throw new Error(err3);                                        }
-                                            else{
+                                                throw new Error(err3);
+                                            }
+                                            else {
                                                 var brand = new Brand({
-                                                    brand_name : brand_name,
-                                                    categories : categories,
-                                                    types : types,
-                                                    primarily_used_for : primarilyusedfor,
-                                                    dosage_id : result3._id
+                                                    brand_name: brand_name,
+                                                    categories: categories,
+                                                    types: types,
+                                                    primarily_used_for: primarilyusedfor,
+                                                    dosage_id: result3._id
                                                 });
-                                                brand.save(function (err4,result4) {
-                                                    if(err4){
+                                                brand.save(function (err4, result4) {
+                                                    if (err4) {
                                                         console.log(err4);
-                                                        throw new Error(err4);                                                }
-                                                    else{
+                                                        throw new Error(err4);
+                                                    }
+                                                    else {
                                                         var company = new Company({
-                                                            company_name : company_name,
-                                                            brand_id : result4._id
+                                                            company_name: company_name,
+                                                            brand_id: result4._id
                                                         });
-                                                        company.save(function(err5,result5){
-                                                            if(err5){
+                                                        company.save(function (err5, result5) {
+                                                            if (err5) {
                                                                 console.log(err5);
-                                                                throw new Error(err5);                                                        }
-                                                            else{
-                                                                Brand.update({brand_name : brand_name},{
-                                                                    $set : {
-                                                                        company_id : result5._id
+                                                                throw new Error(err5);
+                                                            }
+                                                            else {
+                                                                Brand.update({brand_name: brand_name}, {
+                                                                    $set: {
+                                                                        company_id: result5._id
                                                                     }
-                                                                },function (err6) {
-                                                                    if(err6){
+                                                                }, function (err6) {
+                                                                    if (err6) {
                                                                         console.log(err6);
                                                                     }
-                                                                    else{
-                                                                        res.send("New medicine added");
+                                                                    else {
+
+                                                                        Strength.update({_id: result2._id}, {
+                                                                            $push: {
+                                                                                brands_id: result4._id
+                                                                            }
+                                                                        }, function (err7, result7) {
+                                                                            if (err7) {
+                                                                                console.log(err);
+                                                                            }
+                                                                            else {
+                                                                                console.log(result7);
+                                                                                res.send("New medicine added");
+                                                                            }
+                                                                        });
                                                                     }
                                                                 });
                                                             }
@@ -1349,34 +1367,35 @@ app.post('/medicine',function(req,res) {
                     });
                 }
             },
-            function (result,callback) {
-                if(result){
-                    Dosage.findOne({dosage_form : dosage_form},function (err,result1) {
-                        if(err){
+            function (result, callback) {
+                if (result) {
+                    brandresult = result._id;
+                    Dosage.findOne({dosage_form: dosage_form}, function (err, result1) {
+                        if (err) {
                             console.log(err);
                             throw new Error(err);
                         }
-                        else{
-                            callback(null,result1);
+                        else {
+                            callback(null, result1);
                         }
                     });
                 }
-                else{
+                else {
                     var strength = new Strength({
-                        strength : strengtH,
-                        potent_substance : {
-                            name : active_ingredients,
-                            molecule_strength : molecule_strengths
+                        strength: strengtH,
+                        potent_substance: {
+                            name: active_ingredients,
+                            molecule_strength: molecule_strengths
                         },
-                        packaging : packaging,
-                        price : price,
-                        dose_taken : dose_taken,
-                        dose_timing : dose_timing,
-                        warnings : warnings,
-                        prescription : prescription
+                        packaging: packaging,
+                        price: price,
+                        dose_taken: dose_taken,
+                        dose_timing: dose_timing,
+                        warnings: warnings,
+                        prescription: prescription
                     });
-                    strength.save(function (err,result) {
-                        if(err){
+                    strength.save(function (err, result) {
+                        if (err) {
                             console.log(err);
                         }
                         else {
@@ -1385,40 +1404,50 @@ app.post('/medicine',function(req,res) {
                                 strength_id: result._id
                             });
                             dosage.save(function (err1, result1) {
-                                if(err1){
+                                if (err1) {
                                     console.log(err1);
                                 }
-                                else{
+                                else {
                                     var brand = new Brand({
-                                        brand_name : brand_name,
-                                        categories : categories,
-                                        types : types,
-                                        primarily_used_for : primarilyusedfor,
-                                        dosage_id : result1._id
+                                        brand_name: brand_name,
+                                        categories: categories,
+                                        types: types,
+                                        primarily_used_for: primarilyusedfor,
+                                        dosage_id: result1._id
                                     });
-                                    brand.save(function (err2,result2) {
-                                        if(err2){
+                                    brand.save(function (err2, result2) {
+                                        if (err2) {
                                             console.log(err2);
                                         }
-                                        else{
-                                            Company.update({company_name : company_name},{
-                                                $push :{brand_id : result2._id}
+                                        else {
+                                            Company.update({company_name: company_name}, {
+                                                $push: {brand_id: result2._id}
                                             }).exec(function (err3) {
                                                 if (err3) {
                                                     console.log(err3);
                                                 }
                                                 else {
-
-                                                    Brand.update({brand_name : brand_name},{
-                                                        $push : {
-                                                            company_id : req.session.companyresult
+                                                    Brand.update({brand_name: brand_name}, {
+                                                        $push: {
+                                                            company_id: req.session.companyresult
                                                         }
-                                                    },function (err6) {
-                                                        if(err6){
+                                                    }, function (err6) {
+                                                        if (err6) {
                                                             console.log(err6);
                                                         }
-                                                        else{
-                                                            res.send("Brand added successfully  with dosage and strength");
+                                                        else {
+                                                            Strength.update({_id: result._id}, {
+                                                                $push: {
+                                                                    brands_id: result2._id
+                                                                }
+                                                            }, function (err7) {
+                                                                if (err7) {
+                                                                    console.log(err);
+                                                                }
+                                                                else {
+                                                                    res.send("Brand added successfully  with dosage and strength");
+                                                                }
+                                                            });
                                                         }
                                                     });
                                                 }
@@ -1431,34 +1460,35 @@ app.post('/medicine',function(req,res) {
                     });
                 }
             },
-            function (result,callback) {
-                if(result){
-                    Strength.findOne({strength : strengtH},function (err,result1) {
-                        if(err){
+            function (result, callback) {
+                if (result) {
+                    Strength.findOne({strength: strengtH}, function (err, result1) {
+                        if (err) {
                             console.log(err);
                             throw new Error(err);
                         }
-                        else{
-                            callback(null,result1);
+                        else {
+                            callback(null, result1);
                         }
                     });
                 }
-                else{
+                else {
                     var sTrength = new Strength({
-                        strength : strengtH,
-                        potent_substance : {
-                            name : active_ingredients,
-                            molecule_strength : molecule_strengths
+                        strength: strengtH,
+                        potent_substance: {
+                            name: active_ingredients,
+                            molecule_strength: molecule_strengths
                         },
-                        packaging : packaging,
-                        price : price,
-                        dose_taken : dose_taken,
-                        dose_timing : dose_timing,
-                        warnings : warnings,
-                        prescription : prescription
+                        brands_id: brandresult,
+                        packaging: packaging,
+                        price: price,
+                        dose_taken: dose_taken,
+                        dose_timing: dose_timing,
+                        warnings: warnings,
+                        prescription: prescription
                     });
-                    sTrength.save(function (err,result1) {
-                        if(err){
+                    sTrength.save(function (err, result1) {
+                        if (err) {
                             console.log(err);
                         }
                         else {
@@ -1467,19 +1497,19 @@ app.post('/medicine',function(req,res) {
                                 strength_id: result1._id
                             });
                             dosage.save(function (err1, result2) {
-                                if(err1){
+                                if (err1) {
                                     console.log(err1);
                                 }
-                                else{
-                                    Brand.update({brand_name : brand_name},{
-                                        $push : {
-                                            dosage_id : result2._id
+                                else {
+                                    Brand.update({brand_name: brand_name}, {
+                                        $push: {
+                                            dosage_id: result2._id
                                         }
                                     }).exec(function (err2) {
-                                        if(err2){
+                                        if (err2) {
                                             console.log(err2);
                                         }
-                                        else{
+                                        else {
                                             res.send("Dosage added successfully with strength");
                                         }
                                     });
@@ -1490,35 +1520,36 @@ app.post('/medicine',function(req,res) {
                 }
             },
             function (result1) {
-                if(result1){
+                if (result1) {
                     res.send("Medicines already exists");
                 }
-                else{
+                else {
                     var strength = new Strength({
-                        strength : strengtH,
-                        potent_substance : {
-                            name : active_ingredients,
-                            molecule_strength : molecule_strengths
+                        strength: strengtH,
+                        potent_substance: {
+                            name: active_ingredients,
+                            molecule_strength: molecule_strengths
                         },
-                        packaging : packaging,
-                        price : price,
-                        dose_taken : dose_taken,
-                        dose_timing : dose_timing,
-                        warnings : warnings,
-                        prescription : prescription
+                        brands_id: brandresult,
+                        packaging: packaging,
+                        price: price,
+                        dose_taken: dose_taken,
+                        dose_timing: dose_timing,
+                        warnings: warnings,
+                        prescription: prescription
                     });
-                    strength.save(function (err,result1) {
-                        if(err){
+                    strength.save(function (err, result1) {
+                        if (err) {
                             console.log(err);
                         }
-                        else{
-                            Dosage.update({dosage_form : dosage_form},{
-                                $push : {strength_id : result1._id}
+                        else {
+                            Dosage.update({dosage_form: dosage_form}, {
+                                $push: {strength_id: result1._id}
                             }).exec(function (err2) {
-                                if(err2){
+                                if (err2) {
                                     console.log(err2);
                                 }
-                                else{
+                                else {
                                     res.send("strength added successfully");
                                 }
                             });
@@ -1812,21 +1843,8 @@ app.get('/search_molecule',function (req,res) {
     });
 });
 
-app.get('/inmolecule',function (req,res) {
-    var molecule = req.query.molecule;
-    Molecule.find({molecule_name : molecule},function (err,info) {
-        if(err){
-            console.log(err);
-        }
-        else{
-            res.render('info',{data : info});
-        }
-    });
-});
-
 
 //======================= save profile pic ====================
-
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -1979,9 +1997,44 @@ app.get('/searchmolecule',function (req,res) {
     });
 });
 
-
-
-
+app.get('/inmolecule',function (req,res) {
+    var molecule = req.query.molecule;
+    // Molecule.find({molecule_name : molecule},function (err,info) {
+    //     if(err){
+    //         console.log(err);
+    //     }
+    //     else{
+    //         res.render('info',{data : info});
+    //     }
+    // });
+    Strength.find({potent_substance : {$elemMatch : {name : molecule}}}).populate('brands_id').exec(function (err,brands) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            var brand = {};
+            brand['data'] = [];
+            async.each(brands, function (result,callback) {
+                if(result.potent_substance.length === 1) {
+                    brand['data'].push({
+                        results : result
+                    });
+                    callback();
+                }
+                else {
+                    callback();
+                }
+            },function (err) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    res.send(brand.data);
+                }
+            });
+        }
+    });
+});
 
 
 ////////////////////////////////////////// register as a doctor and user ///////////////////////////////////////////////
