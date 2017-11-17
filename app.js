@@ -2024,6 +2024,49 @@ app.get('/findbrands',function (req,res) {
 
 
 
+app.post('/searching',function (req,res) {
+    var search = new RegExp(req.body.search, 'i');
+    async.parallel([
+        function (callback) {
+            Company.find({company_name : search},function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else {
+                    callback(null, result);
+                }
+            });
+        },
+        function (callback) {
+            Brand.find({brand_name : search},function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    callback(null,result);
+                }
+            });
+        },
+        function (callback) {
+            Molecule.find({molecule_name : search},function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    callback(null,result);
+                }
+            });
+        }
+    ],function (err,results) {
+        if(err){
+            console.log(err);
+        }
+        else {
+            res.send(results);
+        }
+    });
+});
+
 
 //==========================Database connection===========================
 

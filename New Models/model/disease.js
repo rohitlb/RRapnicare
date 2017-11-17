@@ -10,7 +10,7 @@ var Disease = new Schema({
     treatment : {type : String},
     outlook : {type : String},
     prevention : {type : String},
-    keywords : [{dname}],
+    keywords : [{dname}]
 });
 
 module.exports = mongoose.model('disease',Disease);
