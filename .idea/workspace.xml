@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35d55bee-c961-4e80-9794-6a82763600fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/New Models/model/brand.js" afterPath="$PROJECT_DIR$/New Models/model/brand.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/New Models/model/disease.js" afterPath="$PROJECT_DIR$/New Models/model/disease.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/New Models/model/doctorregistration.js" afterPath="$PROJECT_DIR$/New Models/model/doctorregistration.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/New Models/model/dosage.js" afterPath="$PROJECT_DIR$/New Models/model/dosage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/New Models/model/molecule.js" afterPath="$PROJECT_DIR$/New Models/model/molecule.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/New Models/model/registration.js" afterPath="$PROJECT_DIR$/New Models/model/registration.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/New Models/model/strength.js" afterPath="$PROJECT_DIR$/New Models/model/strength.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/company.js" afterPath="$PROJECT_DIR$/model/company.js" />
-    </list>
+    <list default="true" id="35d55bee-c961-4e80-9794-6a82763600fc" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -23,6 +14,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6802">
+              <caret line="1730" column="0" lean-forward="true" selection-start-line="1730" selection-start-column="0" selection-end-line="1730" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="company.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/company.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -103,7 +104,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="brand.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="brand.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/New Models/model/brand.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -186,22 +187,6 @@
               <item name="RRapnicare" type="b2602c69:ProjectViewProjectNode" />
               <item name="RRapnicare" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="RRapnicare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RRapnicare" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RRapnicare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RRapnicare" type="462c0819:PsiDirectoryNode" />
-              <item name="New Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RRapnicare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RRapnicare" type="462c0819:PsiDirectoryNode" />
-              <item name="New Models" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -250,12 +235,12 @@
       <workItem from="1510581042033" duration="2667000" />
       <workItem from="1510667996364" duration="1570000" />
       <workItem from="1510746276831" duration="2418000" />
-      <workItem from="1510834765204" duration="2307000" />
+      <workItem from="1510834765204" duration="4372000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8962000" />
+    <option name="totallyTimeSpent" value="11027000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -420,14 +405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1715" column="29" lean-forward="false" selection-start-line="1715" selection-start-column="29" selection-end-line="1715" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/company.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -496,6 +473,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6802">
+          <caret line="1730" column="0" lean-forward="true" selection-start-line="1730" selection-start-column="0" selection-end-line="1730" selection-end-column="0" />
           <folding />
         </state>
       </provider>
