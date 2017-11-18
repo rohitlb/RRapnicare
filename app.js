@@ -2022,8 +2022,6 @@ app.get('/findbrands',function (req,res) {
     });
 });
 
-
-
 app.post('/searching',function (req,res) {
     var search = new RegExp(req.body.search, 'i');
     async.parallel([
