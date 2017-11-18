@@ -1,0 +1,12 @@
+doctype html
+
+html
+
+    body
+        h4
+        table
+            tr dosage_form
+                ul
+                    each val in data.dosage
+                        li
+                            a(href="/go_to_strength?dosage="+val.dosage) #{val.dosage}

@@ -1,0 +1,30 @@
+doctype html
+
+html
+
+    body
+        h4
+        table
+            tr
+                h2 Total result
+                ol
+                    each val in data
+                        li
+                          h4  molecule_name - #{val.molecule_name}
+                          h4 drug_categories - #{val.drug_categories}
+                          h4  description - #{val.description}
+                          h4  absorption - #{val.absorption}
+                          h4  distribution - #{val.distribution}
+                          h4  metabolism - #{val.metabolism}
+                          h4  excretion - #{val.excretion}
+                          h4  side_effect - #{val.side_effect}
+                          h4  precaution - #{val.precaution}
+                          h4  drug_interaction - #{val.drug_interaction}
+                          h4  food_interaction - #{val.food_interaction}
+                          h4  dosage - #{val.dosage}
+                          h4  food - #{val.food}
+                          h4  contradictions
+                          ul
+                            each contra in val.contradictions
+                                h4 #{contra.subhead}
+                                h4 #{contra.info}

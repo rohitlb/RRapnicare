@@ -1,0 +1,53 @@
+#nav
+{
+    background-color: rebeccapurple;
+    height: 124px;
+}
+
+#dropdown1
+{
+    width:200px;
+    top:423px;
+    left:316px;
+    opacity: 1;
+}
+
+.card
+{
+    padding: 2px;
+    margin: 0px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 80px;
+}
+
+
+#card2
+{
+    padding: 2px;
+    margin: 0px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+#card3
+{
+    padding: 2px;
+    margin: 0px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+.span1
+{
+    position: absolute;
+    left: 50px;
+    font-size: 18px;
+}
+.espan
+{
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+}

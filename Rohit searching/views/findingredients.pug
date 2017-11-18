@@ -1,0 +1,12 @@
+doctype html
+
+html
+
+    body
+        h4
+        table
+            tr ingredients
+                ul
+                    each val in data.result
+                        li
+                            a(href="/search_molecule?ingredients="+val.ingredients) #{val.ingredients}
