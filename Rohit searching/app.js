@@ -107,10 +107,9 @@ app.post('/sendOTP',function (req, res) {
     //regex for checking whether entered number is indian or not
     var num = /^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/.test(number);
     if(num === false){
-        res.send({status: "failure", message: "wrong number ! please try again "});
+        res.send({status: "failure", message: "Please enter a valid number "});
         return;
     }
-
     User.findOne({number : number},function (err,result) {
         if(err){
             console.log(err);
