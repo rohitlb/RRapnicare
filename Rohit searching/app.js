@@ -51,7 +51,7 @@ store.on('error',function (error) {
 app.disable('x-powered-by');
 
 //configure the app
-app.set('port',9000);
+app.set('port',4000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -2323,6 +2323,7 @@ app.post('/searching',function (req,res) {
                     console.log(err);
                 }
                 else{
+                    console.log(typeof result);
                     callback(null,result);
                 }
             });
@@ -2422,6 +2423,115 @@ app.post('/searching',function (req,res) {
         }
     });
 });
+
+
+// search with filter
+
+app.post('search', function (req,res) {
+    var filt = req.body.filt;
+    var raw = req.body.search;
+    var spaceRemoved = raw.replace(/\s/g, '');
+    var search = new RegExp(spaceRemoved, 'i');
+
+    switch (filt){
+        case user   :
+            User.find({keywords : search},function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else {
+                    callback(null, result);
+                    res.send(result);
+                }
+            });
+            break;
+
+        case doctor   :
+            Doctor.find({keywords : search},function (err,result) {
+            if(err){
+                console.log(err);
+            }
+            else {
+                callback(null, result);
+                res.send(result);
+            }
+        });
+            break;
+
+        case company  :
+            Company.find({keywords : search},function (err,result) {
+            if(err){
+                console.log(err);
+            }
+            else {
+                callback(null, result);
+                res.send(result);
+            }
+        });
+            break;
+
+        case brand   :
+            Brand.find({keywords : search},function (err,result) {
+            if(err){
+                console.log(err);
+            }
+            else {
+                callback(null, result);
+                res.send(result);
+            }
+        });
+            break;
+
+        case dosage  :
+            Dosage.find({keywords : search},function (err,result) {
+            if(err){
+                console.log(err);
+            }
+            else {
+                callback(null, result);
+                res.send(result);
+            }
+        });
+            break;
+
+        case strength  :
+            Strength.find({keywords : search},function (err,result) {
+            if(err){
+                console.log(err);
+            }
+            else {
+                callback(null, result);
+                res.send(result);
+            }
+        });
+            break;
+
+        case disease  :
+            Disease.find({keywords : search},function (err,result) {
+            if(err){
+                console.log(err);
+            }
+            else {
+                callback(null, result);
+                res.send(result);
+            }
+        });
+            break;
+
+        case molecule  :
+            Molecule.find({keywords : search},function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else {
+                    callback(null, result);
+                    res.send(result);
+                }
+            });
+            break;
+    }
+});
+
 
 //////////////////////searching
 

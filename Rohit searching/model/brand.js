@@ -18,3 +18,5 @@ var Brand = new Schema({
 });
 
 module.exports = mongoose.model('brand',Brand);
+
+// potent substance should be returned even if brand is on filter
