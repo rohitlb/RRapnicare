@@ -27,6 +27,8 @@ var User = new mongoose.Schema({
     relative_name : {type : String },
     relative_contact : {type : String},
     relation : {type : String}
+
+    //keywords name, email, number, blood group, location
 });
 
 module.exports = mongoose.model('user',User);

@@ -13,7 +13,8 @@ var Brand = new Schema({
         category : {type : String},
         types : {type : String},
         dosage : {type : String} ,
-        companyname : {type : String}
+        companyname : {type : String},
+        salts
     }]
 });
 

@@ -17,7 +17,6 @@ mongoose.Promise = promise;
 var async = require('async');
 var keys = require('./private/keys');
 
-
 // req models
 var User  = require('./model/registration');
 var Doctor = require('./model/doctorregistration');
@@ -85,7 +84,7 @@ app.get('/adminprofile',function (req,res) {
 });
 
 // have thread-sleep (tested) . run "npm update --save" for adding modules
-app.get('/test',function (req,res) {
+app.get('/sleep',function (req,res) {
     var start = Date.now();
     // set time
     var hit = sleep(10000);
