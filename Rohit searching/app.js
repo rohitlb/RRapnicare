@@ -154,7 +154,6 @@ app.post('/DoctorsendOTP',function (req, res) {
             if (result) {
                 res.send({status: "failure", message: "number Already Exists"});
                 res.end();
-
             }
             else{
                 var options = { method: 'GET',
