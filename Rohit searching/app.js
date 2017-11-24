@@ -2283,12 +2283,6 @@ app.post('/searching',function (req,res) {
 
     //var test;
     var raw = req.body.search;
-
-    // var search = new RegExp(
-    //     "" + value.split(" ").map(function(word) {
-    //         return "(?=.*\\b" + word + "\\b)"
-    //     }).join("") + ".+"
-    // );
     var spaceRemoved = raw.replace(/\s/g, '');
     console.log(spaceRemoved);
 
@@ -2424,8 +2418,8 @@ app.post('/searching',function (req,res) {
 
 
 // search with filter
-
-app.post('search', function (req,res) {
+console.log("search");
+app.post('filtersearch', function (req,res) {
     var filt = req.body.filt;
     var raw = req.body.search;
     var spaceRemoved = raw.replace(/\s/g, '');

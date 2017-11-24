@@ -47,7 +47,7 @@ var routes = require('./model/imagefile');
 var app = express();
 
 var store = new mongoDBStore({
-    uri : 'mongodb://localhost/ApniCare',
+    uri : 'mongodb://localhost/final',
     collection : 'mySessions'
 });
 
@@ -2061,6 +2061,7 @@ app.post('/searching',function (req,res) {
         }
         else {
             res.send(results);
+
         }
     });
 });
@@ -2069,7 +2070,7 @@ app.post('/searching',function (req,res) {
 //==========================Database connection===========================
 
 //data base connection and opening port
-var db = 'mongodb://localhost/ApniCare';
+var db = 'mongodb://localhost/final';
 mongoose.connect(db, {useMongoClient: true});
 
 
