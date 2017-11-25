@@ -2280,14 +2280,16 @@ app.get('/searching',function (req,res) {
 });
 
 app.post('/searching',function (req,res) {
+    console.log("app");
 
-    //var test;
     var raw = req.body.search;
-    var spaceRemoved = raw.replace(/\s/g, '');
-    console.log(spaceRemoved);
 
+    console.log(raw);
 
-    var search = new RegExp(spaceRemoved, 'i');
+   var spaceRemoved = raw.replace(/\s/g, '');
+
+    var reg = 'i';
+    var search = new RegExp(spaceRemoved,reg );
     async.parallel([
         function (callback) {
             Company.find({company_name : search},function (err,result) {
@@ -2310,7 +2312,7 @@ app.post('/searching',function (req,res) {
             });
         },
         function (callback) {
-            Molecule.find({molecule_name : search},function (err,result) {
+            Molecule.find({molecule_name : search},'-_id molecule_name').sort({molecule_name : 1}).exec(function (err,result) {
                 if(err){
                     console.log(err);
                 }
@@ -2412,10 +2414,11 @@ app.post('/searching',function (req,res) {
         }
         else {
             res.send(results);
+
+            console.log(results);
         }
     });
 });
-
 
 // search with filter
 console.log("search");
