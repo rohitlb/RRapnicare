@@ -1,0 +1,42 @@
+ul.side-nav.fixed#side_navbar(style="position:absolute, transform: translate(-100px), size: 2em")
+    li.brand-logo
+        .center
+            a(href='/health_care_provider')
+                img(style={width: '250px', height: '150px'} src='./images/aaa.png' alt="ApniCare")
+
+    li.bold
+        a.waves-effect.waves-purple.hoverable.black-text(href="/health_care_provider?page=home" style="size: 2em") <b>HOME</b>
+            i.material-icons.left home
+    li.bold
+        a.waves-effect.waves-purple.hoverable.black-text(href='/health_care_provider?page=profile' style="size: 2em") <b>PROFILE</b>
+            i.material-icons.left person
+    li.bold
+        ul.collapsible(data-collapsible='accordion')
+            li.bold
+                a.hoverable.waves-effect.waves-purple.black-text.collapsible-header(style="size: 2em; padding-left: 32px;padding-right: 5px" data-collapsible='accordion') <b>D. INDEX</b>
+                    i.material-icons.left border_color
+                    i.material-icons.right.black-text arrow_drop_down
+                div.collapsible-body(style="display:block")
+                    ul
+                        li
+                            a.hoverable.waves-effect.waves-purple.black-text(href='/health_care_provider?page=drug_data')#drugdata <b>Drug Data</b>
+                        li
+                            a.waves-effect.hoverable.waves-purple.black-text(href='/health_care_provider?page=molecule_data') <b>Molecule Data</b>
+                        li
+                            a.waves-effect.hoverable.waves-purple.black-text(href='/health_care_provider?page=disease_data') <b>Disease Data</b>
+
+            li.bold
+                a.hoverable.waves-effect.waves-purple.black-text.collapsible-header(style="size: 2em; padding-left: 32px;padding-right: 5px" data-collapsible='accordion') <b>FEEDBACK</b>
+                    i.material-icons.left feedback
+                    i.material-icons.right.black-text arrow_drop_down
+                div.collapsible-body(style="display:block")
+                    ul
+                        li
+                            a.waves-effect.hoverable.waves-purple.black-text(href='/health_care_provider?page=feedback_contributions') <b>On Contributions</b>
+
+    li.bold.hide-on-large-only
+        a.waves-effect.waves-purple.hoverable.black-text(href='/health_care_provider?page=notifications' style="size: 2em") <b>NOTIFICATIONS</b>
+            i.material-icons.left notifications
+    li.bold
+        a.waves-effect.waves-purple.black-text.hoverable(href="/health_care_provider?page=need_help" style="size: 2em") <b>NEED HELP?</b>
+            i.material-icons.left help

@@ -1,17 +1,86 @@
 doctype html
 
 html
+    head
 
-    include ./head
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+
+        link(href="/styles/style.css" rel="stylesheet")
+
+        link(href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet")
+
+        script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js")
+
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+
+        script(src="/js/r_test.js")
+
+        title Grids
 
     body
 
-        div
+        .navbar-fixed
+            nav.purple.hoverable
+                div.nav-wrapper
+                    div.row
+                        div.col.s1.m1.l1
 
-            include partial/header
+                            //i.material-icons.left menu
+                            a.purple.white-text.button-collapse.show-on-medium-and-up(data-activates='slide-out')
+                                i.fa.fa-bars.fa-2x
+                        div.col.s4.m2.l2.offset-s3
+                            a.brand-logo(href='#') ApniCare
 
-            include ./body
 
-            include partial/footer
+                        div.col.s12.m12.l5.offset-l4.hide-on-med-and-down
+                            div.fixed.right
+                                a.horizontal.btn-flat.btn-floating.btn-large.purple.right.hide-on-large-only
+                                    i.fa.fa-ellipsis-v
+                                ul
+                                    li
+                                        a.btn.purple.btn-flat.white-text(href='#' style="height: 50px")
+                                            i.fa.fa-exclamation-triangle
+                                    li
+                                        a.dropdown-button.btn-flat.purple.white-text(href='#' style="height: 50px")
+                                            i.fa.fa-bell
+                                    li
+                                        a.waves-effect.btn.white-text.btn-flat.purple.waves-blue.waves-lighten-2.modal-trigger(href='#profile_icon' style="height: 50px")
+                                            i.fa.fa-user-circle
 
-            //include ./tabs
+                        div.col.s1.m1.offset-s3.offset-m8.hide-on-large-only
+                            div.right
+                                a.horizontal.btn-flat.click-to-toggle.btn-floating.btn-large.purple.right
+                                        i.fa.fa-ellipsis-v
+                                ul
+                                            li
+                                                a.btn-flat.purple.white-text.waves-effect.waves-blue.waves-lighten-2.modal-trigger(href='#profile_icon')
+                                                     i.fa.fa-user-circle
+                                            li
+                                                a.btn-floating.btn-large.purple.white-text
+                                                    i.fa.fa-bell
+                                            li
+                                                a.btn-floating.btn-large.purple.white-text
+                                                    i.fa.fa-exclamation-triangle
+
+
+        //div.row
+            div.col.s4
+                ul.dropdown-content#profile_icon
+                    div.card
+                        p This is a sample card
+                        div.divider
+                            p This is another section
+                            a.btn.purple.right.white-text(href='#') Sign-out
+
+        div.row
+            div.col.s3.m3.l3.offset-l9.offset-s9.offset-m9
+                div#profile_icon.modal
+                    div.modal-content(style="position:relative ;z-index: 1003; display: block ;transform:scaleX(1.5); top: 10%;")
+                        h4.center Doctor Name
+                        p Doctor Email
+                    div.modal-footer
+                        a.btn.purple.modal-action.modal-close.waves-effect.waves-blue.waves-lighten-2(href='#') Sign-out
+
+

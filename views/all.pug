@@ -1,0 +1,53 @@
+doctype html
+
+html
+
+    body
+        h4
+        table
+            tr
+                h2 Total result
+                ol
+
+                    each val in data
+                        li
+                            h3 Brand
+                                h4 brand_name &nbsp
+                                a(href="/go_to_dosage?brand="+val.brand) #{val.brand_name}
+                                h4 category &nbsp
+                                a(href="/go_to_dosage?brand=" + val.brand) #{val.categories}
+
+                                ul
+                                    each company in val.company_id
+
+                                            h4 company &nbsp
+                                                a(href="/go_to_dosage?brand=" + company.company_name) #{company.company_name}
+
+
+                                h4 Dosage-
+                                ul
+                                    each dosage in val.dosage_id
+                                          li
+                                          h4 dosage &nbsp
+                                                 a(href="/go_to_dosage?brand=" + dosage.dosage_form) #{dosage.dosage_form}
+                                                        ul
+                                                        each dose in dosage.strength_id
+
+                                                            h4 strength &nbsp
+                                                               a(href="/go_to_dosage?brand=" + dose.strength) #{dose.strength}
+                                                            h4 packaging &nbsp
+                                                               a(href="/go_to_dosage?brand=" + dose.packaging) #{dose.packaging}
+                                                            h4 price &nbsp
+                                                                a(href="/go_to_dosage?brand=" + dose.price) #{dose.price}
+                                                                br
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+main
+    ul.side-nav.fixed#side_navbar(style="position:absolute, transform: translate(-100px), size: 2em")
+        li.brand-logo
+            .center
+                a(href='/')
+                    img(style={width: '250px', height: '150px'} src='./images/aaa.png' alt="ApniCare")
+
+        li.bold
+            a.waves-effect.waves-purple.hoverable.black-text(href="#" style="size: 2em") <b>Home</b>
+                i.material-icons.left home
+        li.bold
+            a.waves-effect.waves-purple.hoverable.black-text(href='#' style="size: 2em") <b>Customization</b>
+                i.material-icons.left person
+        li.bold
+            a.waves-effect.waves-purple.hoverable.black-text(href="#" style="size: 2em") <b>Reports</b>
+                i.material-icons.left home
+        li.bold
+            a.waves-effect.waves-purple.hoverable.black-text(href="#" style="size: 2em") <b>Accounts</b>
+                i.material-icons.left home
+        li.bold
+            a.waves-effect.waves-purple.hoverable.black-text(href="#" style="size: 2em") <b>Data Center</b>
+                i.material-icons.left home
+        li
+            ul.collapsible(data-collapsible='accordion')
+                li.bold
+                    a.hoverable.waves-effect.waves-purple.black-text.collapsible-header(style="size: 2em; padding-left: 32px;padding-right: 32px" data-collapsible='accordion') <b>Activity Queue</b>
+                        i.material-icons.left border_color
+                    div.collapsible-body(style="display:block")
+                        ul.fa-ul
+                            li
+                                a.hoverable.waves-effect.waves-purple.black-text(href='#') Drug Data
+                            li
+                                a.waves-effect.hoverable.waves-purple.black-text(href='#') Molecule Data
+                                    //i.fa-li.fa.fa-square
+                            li
+                                a.waves-effect.hoverable.waves-purple.black-text(href='#') Disease Data
+                                    //i.fa-li.fa.fa-square
+        li.bold.hide-on-large-only
+            a.waves-effect.waves-purple.hoverable.black-text(href='#' style="size: 2em") <b>Notifications</b>
+                i.material-icons.left notifications
+        li.bold.hide-on-large-only
+            a.waves-effect.waves-purple.hoverable.black-text(href='#' style="size: 2em") <b>Warnings</b>
+                i.material-icons.left notifications
+
+        li.bold
+            a.waves-effect.waves-purple.black-text.hoverable(href="#" style="size: 2em") <b>Controller</b>
+                i.material-icons.left feedback
+        li.bold
+            a.waves-effect.waves-purple.black-text.hoverable(href="#" style="size: 2em") <b>Feedback</b>
+                i.material-icons.left feedback
+        li.bold
+            a.waves-effect.waves-purple.black-text.hoverable(href="#" style="size: 2em") <b>Help Requests</b>
+                i.material-icons.left help

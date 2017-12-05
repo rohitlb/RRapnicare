@@ -1,0 +1,27 @@
+header#navBar
+    nav(style="background-color: #660099;")
+        div.nav-wrapper
+
+            a.button-collapse#menubar.top-nav.hide-on-large-only(data-activates='side_navbar')
+                i.fa.fa-bars.fa-2x
+
+            a.brand-logo.center-on-small-only.hide-on-large-only(href='/health_care_provider?page=home') ApniCare
+
+            ul.right.hide-on-med-and-down
+                li
+                    //div.col.s4.m4.l4.offset-l2.offset-m1.offset-s1
+                    a.btn.btn-flat.white-text(href='/health_care_provider?page=notifications' data-balloon-pos="down" data-balloon="Notifications" data-delay="50" style="background-color: #660099")
+                        i.material-icons.large(style="font-size: 35px") notifications
+                li
+                    a.btn.btn-flat.white-text.dropdown-button(href='/health_care_provider?page=profile' data-activates='profile_drop' data-beloworigin='true' style="background-color: #660099")
+                        i.material-icons.large(style="font-size: 35px") person
+
+    ul.dropdown-content#profile_drop
+        li
+            a(href="/health_care_provider?page=profile") My Profile
+        li
+            a(href='#') My Activity
+        li
+            a(href='#') Edit Profile
+        li
+            a(href="/logout") Logout

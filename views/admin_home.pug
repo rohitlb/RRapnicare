@@ -1,0 +1,43 @@
+doctype html
+html
+    include ./layouts/head
+        title ApniCare-Admin Panel
+
+    header
+        include ./layouts/header
+            //-include ./layouts/admins/header_icons
+
+    div.row
+            div.col.s12.m3.l3
+                include ./layouts/admins/pageSideNav
+
+            //div.col.s12.m1.l1
+
+            div.col.s12.m9.l9
+
+                    if(page == 'home')
+                        include ./layouts/admins/homeAdmin
+                    else if(page == 'customization')
+                        include ./layouts/admins/customization
+                    else if(page == 'real_time')
+                        include ./layouts/admins/realTime
+                    else if(page == 'userAccounts')
+                        include ./layouts/admins/userAccounts
+                    else if(page == 'professionals')
+                        include ./layouts/admins/professionals
+                    else if(page == 'healthServices')
+                        include ./layouts/admins/healthServices
+                    else if(page == 'subAdmins')
+                        include ./layouts/admins/subAdmins
+                    else if(page == 'customerCare')
+                        include ./layouts/admins/customerCare
+                    else if(page == 'drugIndex')
+                        include ./layouts/admins/drugIndexData
+                    else if(page == 'molecule')
+                        include ./layouts/admins/moleculeData
+                    else if(page == 'disease')
+                        include ./layouts/admins/diseaseData
+                    else if(page == 'feedback')
+                        include ./layouts/admins/feedback
+                    else if(pageData == 'reqCall')
+                        include ./layouts/admins/requestCallBack
