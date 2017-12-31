@@ -1,0 +1,29 @@
+{
+  "name": "apnicare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akarsh Sachdeva",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "compression": "^1.6.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-device": "^0.4.2",
+    "express-session": "^1.15.3",
+    "materialize-css": "^0.98.2",
+    "mongoose": "^4.10.6",
+    "pug": "^2.0.0-rc.2",
+    "request": "^2.81.0",
+    "serve-favicon": "^2.4.3"
+  },
+  "devDependencies": {
+    "morgan": "^1.8.2"
+  }
+}

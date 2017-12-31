@@ -1,0 +1,44 @@
+doctype
+
+html
+    head
+        title Apni Care
+
+        // materialize CSS include
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css")
+
+        // jquery include
+        script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
+
+        // materialize CSS javascript
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js")
+
+        // google material design icons
+        link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
+
+        //custom css include
+        link(rel="stylesheet", href="/public/styles/styles.css")
+
+        //custom scripts include
+        script(src="/public/scripts/script.js")
+        script(src="/public/scripts/modals.js")
+
+
+
+    block header
+        header
+            p this is header
+
+    block content
+
+    block footer
+        footer.page-footer
+            div.container this is page footer
+            div.footer-copyright
+                div.container
+                | 2017 Copyright Text
+
+    //floating action cart button bottom page
+    div#scrollButton.fixed-action-btn.vertical
+        a.btn-floating.btn-large.tooltipped.purple(href="javascript:void(0)" data-position="top" data-tooltip="Back to Top")
+            i.material-icons navigation
