@@ -1,0 +1,46 @@
+ul.collapsible(data-collapsible='accordion')
+    li
+        a.black-text(href='/admin?page=home')
+            div.collapsible-header.hoverable
+                i.material-icons.left.tiny home
+                span <b>Home</b>
+
+    li
+        a.black-text(href='/admin?page=customization')
+            div.collapsible-header.hoverable
+                i.material-icons.left.tiny person
+                span <b>Profile</b>
+
+
+    li
+        div.collapsible-header.hoverable
+            i.material-icons.tiny.left list
+            span <b>D. Index</b>
+        div.collapsible-body
+            span
+            div.container
+
+                ul
+                    li.hoverable
+                        a.black-text(href='/admin?page=drugIndex') Drug Index Data
+                        div.divider
+                        //div.section
+                    li.hoverable
+                        a.black-text(href='/admin?page=molecule') Molecule Data
+                        div.divider
+                        //div.section
+                    li.hoverable
+                        a.black-text(href='/admin?page=disease') Disease Data
+
+
+    li
+        a.black-text(href='/admin?page=reqCall')
+        div.collapsible-header.hoverable
+            i.material-icons.left.tiny feedback
+            span <b>Feedback</b>
+
+    li
+        a.black-text(href='/admin?page=feedback')
+            div.collapsible-header.hoverable
+                i.material-icons.left.tiny feedback
+                span <b>Help</b>

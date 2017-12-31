@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d5147738-e277-4c3e-a473-ca37c99f1700" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
+              <caret line="1723" column="26" lean-forward="true" selection-start-line="1723" selection-start-column="26" selection-end-line="1723" selection-end-column="26" />
+              <folding>
+                <element signature="e#56473#57851#0" expanded="false" />
+                <element signature="e#57898#58982#0" expanded="false" />
+                <element signature="e#59031#60105#0" expanded="false" />
+                <element signature="e#60149#60615#0" expanded="false" />
+                <element signature="e#60665#61178#0" expanded="false" />
+                <element signature="e#61220#61250#0" expanded="false" />
+                <element signature="e#64189#64220#0" expanded="false" />
+                <element signature="e#64265#65705#0" expanded="false" />
+                <element signature="e#65774#66051#0" expanded="false" />
+                <element signature="e#73530#93201#0" expanded="false" />
+                <element signature="e#73662#74710#0" expanded="false" />
+                <element signature="e#74763#75812#0" expanded="false" />
+                <element signature="e#75869#76918#0" expanded="false" />
+                <element signature="e#76953#78003#0" expanded="false" />
+                <element signature="e#78051#78522#0" expanded="false" />
+                <element signature="e#78567#79616#0" expanded="false" />
+                <element signature="e#82358#82526#0" expanded="false" />
+                <element signature="e#82554#83142#0" expanded="false" />
+                <element signature="e#83193#84241#0" expanded="false" />
+                <element signature="e#84281#85895#0" expanded="false" />
+                <element signature="e#86028#86993#0" expanded="false" />
+                <element signature="e#88712#89851#0" expanded="false" />
+                <element signature="e#89891#90941#0" expanded="false" />
+                <element signature="e#90977#92056#0" expanded="false" />
+                <element signature="e#92130#93199#0" expanded="false" />
+                <element signature="e#93256#112927#0" expanded="false" />
+                <element signature="e#93388#94436#0" expanded="false" />
+                <element signature="e#94489#95538#0" expanded="false" />
+                <element signature="e#95595#96644#0" expanded="false" />
+                <element signature="e#96679#97729#0" expanded="false" />
+                <element signature="e#97777#98248#0" expanded="false" />
+                <element signature="e#98293#99342#0" expanded="false" />
+                <element signature="e#102084#102252#0" expanded="false" />
+                <element signature="e#102280#102868#0" expanded="false" />
+                <element signature="e#102919#103967#0" expanded="false" />
+                <element signature="e#104007#105621#0" expanded="false" />
+                <element signature="e#105754#106719#0" expanded="false" />
+                <element signature="e#108438#109577#0" expanded="false" />
+                <element signature="e#109617#110667#0" expanded="false" />
+                <element signature="e#110703#111782#0" expanded="false" />
+                <element signature="e#111856#112925#0" expanded="false" />
+                <element signature="e#122010#123577#0" expanded="false" />
+                <element signature="e#132514#133105#0" expanded="false" />
+                <element signature="e#133157#133758#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="disease.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/disease.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="disease_data_view.pug" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/disease_data_view.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="79" column="91" lean-forward="true" selection-start-line="79" selection-start-column="91" selection-end-line="79" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drug_data_view.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/drug_data_view.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="disease_data_form.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/disease_data_form.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="79" column="26" lean-forward="true" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drugdata.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/drugdata.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="54" column="42" lean-forward="false" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>basic</find>
+      <find>/pharma_ba</find>
+      <find>imag</find>
+      <find>diag</find>
+      <find>disea</find>
+      <find>disease_data</find>
+      <find>drug_data</find>
+      <find>.brands</find>
+      <find>drug_alp</find>
+      <find>drug_dataa</find>
+      <find>.card</find>
+      <find>disease_data_form</find>
+      <find>drug_data_form</find>
+      <find>/medicine</find>
+      <find>card</find>
+      <find>brand_</find>
+      <find>/health_care</find>
+      <find>req.query.brand</find>
+      <find>teal</find>
+      <find>disease da</find>
+      <find>disease</find>
+      <find>subhea</find>
+      <find>disease_data_butto</find>
+      <find>repeated</find>
+      <find>disease_dat</find>
+      <find>repeat</find>
+      <find>/dise</find>
+      <find>/disease</find>
+      <find>alert()</find>
+      <find>alert</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>18</replace>
+      <replace>val</replace>
+      <replace>15</replace>
+      <replace>profile_student_doctor</replace>
+      <replace>href='/health_care_provider?page=drug_data</replace>
+      <replace>req.query.page == 'profile_student_doctor' || req.query.page == 'profile_student_pharmacist'</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/views/category.pug" />
+        <option value="$PROJECT_DIR$/views/searchtypes.pug" />
+        <option value="$PROJECT_DIR$/views/diseasebrands.pug" />
+        <option value="$PROJECT_DIR$/model/brand.js" />
+        <option value="$PROJECT_DIR$/views/molecules.pug" />
+        <option value="$PROJECT_DIR$/views/all.pug" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/head.pug" />
+        <option value="D:/old/views/partial/footer.pug" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/footer.pug" />
+        <option value="$PROJECT_DIR$/views/admin/homepage.pug" />
+        <option value="$PROJECT_DIR$/views/admin/r_partial/header.pug" />
+        <option value="$PROJECT_DIR$/views/admin/main.pug" />
+        <option value="$USER_HOME$/WebstormProjects/PageChange/views/admin_home1.pug" />
+        <option value="$PROJECT_DIR$/views/admin/head.pug" />
+        <option value="$PROJECT_DIR$/public/js/test_admin.js" />
+        <option value="$PROJECT_DIR$/views/admin/home_admin.pug" />
+        <option value="$PROJECT_DIR$/views/admin/home_page.pug" />
+        <option value="$PROJECT_DIR$/model/molecule.js" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/molecule_data.pug" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/profile_student.pug" />
+        <option value="$PROJECT_DIR$/views/home_sideNav.pug" />
+        <option value="D:/old/public/css/Uscript.css" />
+        <option value="$PROJECT_DIR$/model/doctorregistration.js" />
+        <option value="$PROJECT_DIR$/model/pharma.js" />
+        <option value="$PROJECT_DIR$/model/professional.js" />
+        <option value="$PROJECT_DIR$/public/js/test.js" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/profile_student_pharmacist.pug" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/profile3_pharma.pug" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/profile2_doc.pug" />
+        <option value="$PROJECT_DIR$/views/doctorpage.pug" />
+        <option value="$PROJECT_DIR$/views/medicine.pug" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/header.pug" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/help.pug" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/profile1_pharma.pug" />
+        <option value="$PROJECT_DIR$/views/doctoruser.pug" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/profile_student_doctor.pug" />
+        <option value="$PROJECT_DIR$/views/disease.pug" />
+        <option value="$PROJECT_DIR$/views/home_profile_doctor.pug" />
+        <option value="$PROJECT_DIR$/public/styles/rstyle.css" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/disease_data.pug" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/profile1.pug" />
+        <option value="$PROJECT_DIR$/public/styles/rstyle4.css" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/drugdata.pug" />
+        <option value="$PROJECT_DIR$/model/strength.js" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/drug_data_view.pug" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/drug_data_form.pug" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/disease_data_form.pug" />
+        <option value="$PROJECT_DIR$/model/disease.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/public/js/r_test.js" />
+        <option value="$PROJECT_DIR$/views/health_care_provider/partial/disease_data_view.pug" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="662" />
+    <option name="height" value="726" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Rupesh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Rupesh" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Rupesh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Rupesh" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Rupesh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Rupesh" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="javascript.nodejs.core.library.configured.version" value="8.4.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="jsx.switch.disabled" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Shido\Desktop\Edit" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.app.js">
+    <configuration name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="app.js" working-dir="$PROJECT_DIR$" />
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.app.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d5147738-e277-4c3e-a473-ca37c99f1700" name="Default" comment="" />
+      <created>1509719076189</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1509719076189</updated>
+      <workItem from="1509719077715" duration="18200000" />
+      <workItem from="1509860880558" duration="21614000" />
+      <workItem from="1509886590612" duration="5010000" />
+      <workItem from="1509899994994" duration="4398000" />
+      <workItem from="1509965346161" duration="13737000" />
+      <workItem from="1509988198500" duration="12378000" />
+      <workItem from="1510078938936" duration="8204000" />
+      <workItem from="1510139780911" duration="25518000" />
+      <workItem from="1510224412800" duration="14508000" />
+      <workItem from="1510312109534" duration="25846000" />
+      <workItem from="1510379635558" duration="794000" />
+      <workItem from="1510380604292" duration="26029000" />
+      <workItem from="1510576814698" duration="1426000" />
+      <workItem from="1510597578597" duration="6213000" />
+      <workItem from="1510657004837" duration="5248000" />
+      <workItem from="1510665061445" duration="24019000" />
+      <workItem from="1510776484184" duration="1946000" />
+      <workItem from="1510838783824" duration="110673000" />
+      <workItem from="1511363944468" duration="13014000" />
+      <workItem from="1511435395796" duration="679000" />
+      <workItem from="1511460420318" duration="179000" />
+      <workItem from="1511461656481" duration="21603000" />
+      <workItem from="1512271437514" duration="51472000" />
+      <workItem from="1512444731389" duration="8821000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="435183000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16741072" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20559211" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17269737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14826499" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17269737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34626648" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="22" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/WebstormProjects/PageChange/views/admin_home1.pug" />
+    <entry file="file://$USER_HOME$/WebstormProjects/PageChange/views/admin_home.pug" />
+    <entry file="file://$PROJECT_DIR$/views/layouts/admins/homeAdmin.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/home_admin.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/admins/moleculeData.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/home_page.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="48" lean-forward="true" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/main.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/drugindex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/dosage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/molecule.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/head.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/molecule_data.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/WebstormProjects/GridLearning/public/js/test.js" />
+    <entry file="file://D:/old/public/css/Uscript.css" />
+    <entry file="file://$PROJECT_DIR$/model/pharma.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/doctorregistration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/professional.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/profile_student_pharmacist.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="26" column="63" lean-forward="false" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/profile3_pharma.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/Dtest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="161" column="14" lean-forward="true" selection-start-line="161" selection-start-column="14" selection-end-line="161" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/occupation.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/company.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/brand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/medicine.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="49" lean-forward="false" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/doctor_home.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/header.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="141" lean-forward="false" selection-start-line="34" selection-start-column="141" selection-end-line="34" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/help.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/head.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="45" lean-forward="true" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/profile2_doc.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="105" column="56" lean-forward="true" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/doctoruser.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/profile1_pharma.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/doctorpage.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home_sideNav.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/disease.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/profile_student_doctor.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="74" column="27" lean-forward="true" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/profile1.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="359" column="16" lean-forward="false" selection-start-line="359" selection-start-column="16" selection-end-line="359" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/rstyle4.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/strength.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/rstyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="85" column="20" lean-forward="false" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/drug_data_view.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/disease_data_form.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="79" column="26" lean-forward="true" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/drug_data_form.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home_profile_doctor.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/disease_data.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="81" column="77" lean-forward="false" selection-start-line="81" selection-start-column="77" selection-end-line="81" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/r_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="447" column="58" lean-forward="true" selection-start-line="447" selection-start-column="58" selection-end-line="447" selection-end-column="58" />
+          <folding>
+            <element signature="e#30446#30474#0" expanded="false" />
+            <element signature="e#30821#30849#0" expanded="false" />
+            <element signature="e#31031#31059#0" expanded="false" />
+            <element signature="e#33801#33824#0" expanded="false" />
+            <marker date="1512453751682" expanded="true" signature="4774:4819" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/drugdata.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="54" column="42" lean-forward="false" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="1723" column="26" lean-forward="true" selection-start-line="1723" selection-start-column="26" selection-end-line="1723" selection-end-column="26" />
+          <folding>
+            <element signature="e#56473#57851#0" expanded="false" />
+            <element signature="e#57898#58982#0" expanded="false" />
+            <element signature="e#59031#60105#0" expanded="false" />
+            <element signature="e#60149#60615#0" expanded="false" />
+            <element signature="e#60665#61178#0" expanded="false" />
+            <element signature="e#61220#61250#0" expanded="false" />
+            <element signature="e#64189#64220#0" expanded="false" />
+            <element signature="e#64265#65705#0" expanded="false" />
+            <element signature="e#65774#66051#0" expanded="false" />
+            <element signature="e#73530#93201#0" expanded="false" />
+            <element signature="e#73662#74710#0" expanded="false" />
+            <element signature="e#74763#75812#0" expanded="false" />
+            <element signature="e#75869#76918#0" expanded="false" />
+            <element signature="e#76953#78003#0" expanded="false" />
+            <element signature="e#78051#78522#0" expanded="false" />
+            <element signature="e#78567#79616#0" expanded="false" />
+            <element signature="e#82358#82526#0" expanded="false" />
+            <element signature="e#82554#83142#0" expanded="false" />
+            <element signature="e#83193#84241#0" expanded="false" />
+            <element signature="e#84281#85895#0" expanded="false" />
+            <element signature="e#86028#86993#0" expanded="false" />
+            <element signature="e#88712#89851#0" expanded="false" />
+            <element signature="e#89891#90941#0" expanded="false" />
+            <element signature="e#90977#92056#0" expanded="false" />
+            <element signature="e#92130#93199#0" expanded="false" />
+            <element signature="e#93256#112927#0" expanded="false" />
+            <element signature="e#93388#94436#0" expanded="false" />
+            <element signature="e#94489#95538#0" expanded="false" />
+            <element signature="e#95595#96644#0" expanded="false" />
+            <element signature="e#96679#97729#0" expanded="false" />
+            <element signature="e#97777#98248#0" expanded="false" />
+            <element signature="e#98293#99342#0" expanded="false" />
+            <element signature="e#102084#102252#0" expanded="false" />
+            <element signature="e#102280#102868#0" expanded="false" />
+            <element signature="e#102919#103967#0" expanded="false" />
+            <element signature="e#104007#105621#0" expanded="false" />
+            <element signature="e#105754#106719#0" expanded="false" />
+            <element signature="e#108438#109577#0" expanded="false" />
+            <element signature="e#109617#110667#0" expanded="false" />
+            <element signature="e#110703#111782#0" expanded="false" />
+            <element signature="e#111856#112925#0" expanded="false" />
+            <element signature="e#122010#123577#0" expanded="false" />
+            <element signature="e#132514#133105#0" expanded="false" />
+            <element signature="e#133157#133758#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/disease.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/health_care_provider/partial/disease_data_view.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="79" column="91" lean-forward="true" selection-start-line="79" selection-start-column="91" selection-end-line="79" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

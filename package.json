@@ -1,7 +1,7 @@
 {
   "name": "apni-care",
   "version": "1.0.2",
-  "description": "",
+  "description": "1 login-reg\r 2 profile\r 3 regex for number and password\r 4 session\r 5 thread-sleep\r 6 500 & 404 error handling",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,10 +18,11 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "express-validator": "^4.3.0",
-    "mongoose": "^4.13.1",
+    "mongoose": "^4.13.6",
     "multer": "^1.3.0",
     "pug": "^2.0.0-rc.4",
     "request": "^2.83.0",
+    "require": "^2.4.20",
     "serve-favicon": "^2.4.5",
     "thread-sleep": "^2.0.0"
   },
@@ -32,5 +33,6 @@
   "bugs": {
     "url": "https://github.com/rohitlb/ApniCare/issues"
   },
-  "homepage": "https://github.com/rohitlb/ApniCare#readme"
+  "homepage": "https://github.com/rohitlb/ApniCare#readme",
+  "devDependencies": {}
 }

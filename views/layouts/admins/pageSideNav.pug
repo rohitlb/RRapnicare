@@ -1,0 +1,80 @@
+ul.collapsible(data-collapsible='accordion')
+    li
+        a.black-text(href='/admin?page=home')
+            div.collapsible-header.hoverable
+                i.material-icons.left.tiny home
+                span <b>Home</b>
+
+    li
+        a.black-text(href='/admin?page=customization')
+            div.collapsible-header.hoverable
+                i.material-icons.left.tiny dashboard
+                span <b>Customization</b>
+
+    li
+        a.black-text(href='/admin?page=real_time')
+            div.collapsible-header.hoverable
+                i.material-icons.left.tiny access_time
+                span <b>Real Time</b>
+
+    li
+
+        div.collapsible-header.hoverable
+            i.material-icons.tiny.left developer_board1
+            span <b>Manage Accounts</b>
+        div.collapsible-body.hoverable
+            span
+            div.container
+                ul
+                    li.hoverable
+                        a.black-text(href='/admin?page=userAccounts') Users
+                        div.divider
+                    li.hoverable
+                        a.black-text(href='/admin?page=professionals') Professionals
+                        div.divider
+                    li.hoverable
+                        a.black-text(href='/admin?page=healthServices') Health Services
+                        div.divider
+                    li.hoverable
+                        a.black-text(href='/admin?page=subAdmin') Sub-admin
+                        div.divider
+                    li.hoverable
+                        a.black-text(href='/admin?page=customerCare') Customer Care
+                        div.divider
+                    li.hoverable
+                        a.black-text(href='#') Add roles
+                            i.material-icons.left add_circle_outline
+
+
+    li
+        div.collapsible-header.hoverable
+            i.material-icons.tiny.left list
+            span <b>Activity Queue</b>
+        div.collapsible-body
+            span
+            div.container
+
+                ul
+                    li.hoverable
+                        a.black-text(href='/admin?page=drugIndex') Drug Index Data
+                        div.divider
+                        //div.section
+                    li.hoverable
+                        a.black-text(href='/admin?page=molecule') Molecule Data
+                        div.divider
+                        //div.section
+                    li.hoverable
+                        a.black-text(href='/admin?page=disease') Disease Data
+
+
+    li
+        a.black-text(href='/admin?page=reqCall')
+        div.collapsible-header.hoverable
+            i.material-icons.left.tiny local_phone
+            span <b>Request Call Back</b>
+
+    li
+        a.black-text(href='/admin?page=feedback')
+            div.collapsible-header.hoverable
+                i.material-icons.left.tiny feedback
+                span <b>Feedback</b>

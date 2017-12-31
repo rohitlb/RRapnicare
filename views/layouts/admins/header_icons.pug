@@ -1,0 +1,56 @@
+div.row
+    div.col.s1.m1.l1
+        //i.material-icons.left menu
+        a.purple.white-text.button-collapse.show-on-medium-and-up(data-activates='slide-out')
+            i.fa.fa-bars.fa-2x
+
+    div.col.s4.m2.l2.offset-s3
+        a.brand-logo(href='#') ApniCare
+
+    div.col.s12.m12.l5.offset-l4.hide-on-med-and-down
+        div.fixed.right
+            a.horizontal.btn-flat.btn-floating.btn-large.purple.right.hide-on-large-only
+                i.fa.fa-ellipsis-v
+            ul
+                li
+                    a.btn.purple.btn-flat.white-text(href='#' style="height: 50px")
+                        i.fa.fa-exclamation-triangle
+                li
+                    a.dropdown-button.btn-flat.purple.white-text(href='#' style="height: 50px")
+                        i.fa.fa-bell
+                li
+                    a.dropdown-button.btn-flat.purple.white-text(href='#' style="height: 50px" data-activates='profile_icon')
+                        i.fa.fa-user-circle
+
+    div.col.s1.m1.offset-s3.offset-m8.hide-on-large-only
+        div
+            a.btn-flat.btn-floating.btn-large.purple.right.dropdown-button(data-activates="dropdown1" data-beloworigin="true")
+                i.fa.fa-ellipsis-v
+            ul#dropdown1.dropdown-content
+                li.purple
+                    a(href="#")
+                        i.fa.fa-user-circle
+                li.purple
+                    a(href="#")
+                        i.fa.fa-bell
+                li.purple
+                    a(href="#")
+                        i.fa.fa-exclamation-triangle
+
+    //ul.dropdown-content#profile_icon
+        div.card.card-panel
+
+
+
+
+    //ul.side-nav#slide-out
+        li
+            a(href='/admin') <b>Home</b>
+                i.material-icons.left.tiny home
+        li
+            a(href='#') <b>Dashboard</b>
+                i.material-icons.left.tiny dashboard
+        li
+            a(href='#') <b>User View</b>
+                i.material-icons.left.tiny access_time
+

@@ -16,10 +16,12 @@ var Molecule = new Schema({
     precaution : {type : String},
     drug_interaction : {type : String},
     food_interaction : {type : String},
-    dosage : {type : String},
+    oral : {type : String},
+    intravenous : {type : String},
     food : {type : String},
     //list of contra indications
-    contradictions : [ {subhead : {type : String},info : {type : String}}]
+    contraindications : [ {subhead : {type : String},info : {type : String}}],
+    source : {type:String}
 });
 
 module.exports = mongoose.model('molecule',Molecule);

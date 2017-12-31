@@ -1,0 +1,44 @@
+doctype html
+html
+    include ./head
+    title ApniCare - Admin
+
+    body
+        include ./r_partial/header
+
+        include ./main
+        div.col.s12.m12.l8.offset-s4.offset-m4.offset-l4
+            if(page == 'home')
+                include ./home_page
+        //    else if(page == 'profile')
+        //        include ./health_care_provider/partial/profile1
+        //    else if(page == 'profile_doctor')
+        //        include ./health_care_provider/partial/profile2_doc
+        //    else if(page == 'profile_pharmacist')
+        //        include ./health_care_provider/partial/profile3_pharma
+        //    else if(page == 'drug_data')
+        //        include ./health_care_provider/partial/drugdata
+        //    else if(page == 'drug_data_form')
+        //        include ./health_care_provider/partial/drug_data_form
+        //    else if(page == 'molecule_data')
+        //        include ./health_care_provider/partial/molecule_data
+        //    else if(page == 'molecule_data_form')
+        //        include ./health_care_provider/partial/molecule_data_form
+        //    else if(page == 'disease_data')
+        //        include ./health_care_provider/partial/disease_data
+        //    else if(page == 'disease_data_form')
+        //        include ./health_care_provider/partial/disease_data_form
+        //    else if(page == 'image')
+        //        include ./health_care_provider/partial/profile2_doc
+        //    else if(page == 'notifications')
+        //        include ./health_care_provider/partial/notifications
+        //    else if(page == 'feedback_contributions')
+        //        include ./health_care_provider/partial/feedback_contributions
+        //    else if(page == 'feedback_profile')
+        //        include ./health_care_provider/partial/feedback_profile
+        //    else if(page == 'need_help')
+        //        include ./health_care_provider/partial/help
+
+        //footer
+        //    div.col.s12.m12.l8.offset-s4.offset-m4.offset-l4
+        //        include ./health_care_provider/partial/footer

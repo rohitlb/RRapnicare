@@ -1,0 +1,194 @@
+
+span {
+    font-size: 20px;
+}
+span.flow-text {
+    font-size: 16px;
+}
+span1 {
+    font-size: 2em;
+}
+/*input[type=text]
+{
+    font-size: 10px;
+    color: black;
+}
+*/
+
+span#f1,span#f2{
+    font-size: 12px;
+    position: absolute;
+    color: teal;
+}
+li.bold {
+
+    font-family: Arial;
+    font-weight: 800;
+    display: block;
+    padding: 2px 5px;
+    color: #333;
+    font-size: 50px;
+    text-align: left;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+h3 {
+    font-family: italic bold Verdana, serif;
+}
+.card-title {
+    font-size: 120px;
+    padding: 10px;
+}
+
+.card
+{
+    max-width: 180px;
+}
+.collection#home_card:hover {
+    color: white;
+    background-color: darkgray;
+}
+.card-title#home_card_title {
+    width: 400px;
+    height: 120px;
+    max-width: none;
+    font-size: small;
+}
+
+.tabs .tab a {
+    background-color: black;
+    color: white;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color: #5B4F66;
+}
+img
+{
+    padding: 10px;
+    max-width: 180px;
+}
+input[type=file]
+{
+    padding: 10px;
+    background: #2d2d2d;
+    font-size: 10px;
+}
+
+.drug_alphabets {
+    width: fit-content;
+    height: fit-content;
+    background: #660099;
+    font-size: 14px;
+    position: relative;
+    padding: 4px;
+    line-height: 1.42857;
+}
+.pull-left {
+    float: left!important;
+}
+::after, ::before {
+    box-sizing: border-box;
+}
+.drug_alphabets li {
+    display: block;
+    float: left;
+    margin: 1.5px;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 0.8;
+    padding: 2px;
+    font-family: OpenSans-Regular;
+}
+
+ul {
+    margin: 0;
+}
+ul li {
+    list-style: none;
+}
+::after, ::before {
+    box-sizing: border-box;
+}
+li {
+    text-align: -webkit-match-parent;
+}
+.drug_alphabets li a.btn2 {
+    font-size: 22px;
+    width: fit-content;
+    height: 24px;
+    padding: 2px 1px 2px 1px;
+    color: black;
+    background-color: white;
+}
+.drug_alphabets li a.btn2:hover {
+    box-shadow: lavender;
+    font-size: 28px;
+    background-color: lavender;
+}
+.drug_alphabets li a.btn2.active {
+    background-color: lavender;
+    font-size: 28px;
+    color: blue;
+}
+.drug_alphabets li a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    background: #FFF;
+    border: #d1ecf1 solid 1px;
+}
+
+
+.two-col {
+    column-count: 2;
+    vertical-align: top;
+}
+
+
+
+.side-nav li a:active
+{
+    background-color: lavender;
+}
+
+.side-nav .collapsible-header, .side-nav.fixed .collapsible-header
+{
+    background-color: transparent;
+    border: none;
+    line-height: inherit;
+    height: inherit;
+    padding-left: 0;
+    padding-right: 10px;
+}
+.drug-list_col {
+    height: 150px;
+    vertical-align: top;
+    text-align: left;
+    width: 100%;
+}
+table#table1{
+    border-radius: 15px;
+    background: lavender;
+    border-collapse: inherit;
+}
+.brands {
+    font-size: 25px;
+}
+
+td, th {
+    padding: 5px 5px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+<!-- ENTER MORE DATA OPTION IN DRUG FORM -->
+a#enter_more_data
+{
+    background-color: lavender;
+    color: black;
+    font-size: 20px;
+}

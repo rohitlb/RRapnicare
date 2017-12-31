@@ -1,0 +1,80 @@
+div.row
+    div.col.s12.m12.l9.offset-l3
+        img#drug(src='/images/drugsData.jpg', style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;')
+        div.container#diseasedata
+            .row
+                .col.s12
+                    form(name='disease_form', method='POST', onsubmit='return validateForm();', action='#')
+
+                        center
+                            h4(style='font-weight:600;') Enter Disease Data
+                        div.col.s12.m12.l12
+                            span.target1 Disease Name
+                            span.red-text &nbsp*
+                            input.validate(type='text', id='disease_name', style='color:black;font-size: 15px;font-weight: 400;' required)
+
+                        div.col.s12.m12.l12
+                            span.target2 What are its Symptoms?
+                            span.red-text &nbsp*
+                            textarea#symptoms
+                            label(for='symptoms', style='color:black;font-size: 15px;font-weight: 400;' required)
+                            //input.val11(style='color:black;font-size: 15px;font-weight: 400;')
+                        div.col.s12.m12.l12
+                            span.target3 What are its possible Risk Factors?
+                            span.red-text &nbsp*
+                            textarea#risk_factors
+                            label(for='risk_factors', style='color:black;font-size: 15px;font-weight: 400;' required)
+                            //input.val12(type='text', style='color:black;font-size: 15px;font-weight: 400;')
+
+                        div.col.s12.m12.l12
+                            span.target4 What are its Causes?
+                            span.red-text &nbsp*
+                            textarea#causes
+                            label(for='causes', style='color:black;font-size: 15px;font-weight: 400;' required)
+                            //input.val13(type='text', style='color:black;font-size: 15px;font-weight: 400;')
+                            br
+                        div.col.s12.m12.l12
+                            span.target5 How is it Diagnosed?
+                            span.red-text &nbsp*
+                            br
+                        div.col.s12.m12.l12
+                            div.repeater
+                                div
+                                    input.browser-default.repeat_subhead#subheading(type='text', placeholder='Enter a subheading' required)
+                                    button.remove x
+                                    textarea.text_subhead#subhead_text
+                                    label(for='subheading', style='color:black;font-size: 15px;font-weight: 400;' required)
+                            button.repeat Add A Subheading
+                        br
+                        div.col.s12.m12.l12
+                            span.target6 How is it Treated?
+                            span.red-text &nbsp*
+                            textarea#treatment
+                            label(for='treatment', style='color:black;font-size: 15px;font-weight: 400;' required)
+                            //input.val15(type='text', style='color:black;font-size: 15px;font-weight: 400;')
+                        br
+                        div.col.s12.m12.l12
+                            span.target7 What is the Outlook for it?
+                            span.red-text &nbsp*
+                            textarea#outlook
+                            label(for='outlook', style='color:black;font-size: 15px;font-weight: 400;' required)
+                            //input.val16(type='text', style='color:black;font-size: 15px;font-weight: 400;')
+                        br
+                        div.col.s12.m12.l12
+                            span.target8 How can #{disease_name} be Prevented?
+                            span.red-text &nbsp*
+                            textarea#prevention
+                            label(for='prevention', style='color:black;font-size: 15px;font-weight: 400;' required)
+                            //input.val17(type='text', style='color:black;font-size: 15px;font-weight: 400;')
+                        div.col.s12.m12.l12
+                            span.target8 Source of Information
+                            span.red-text &nbsp*
+                            textarea#source
+                            label(for='source', style='color:black;font-size: 15px;font-weight: 400;' required)
+
+                        br
+                        div.row
+                            div.col.s6.l4.m4
+                                input.reset(type='reset')
+                            div.col.s6.l4.m4.offset-l4
+                                input.button#disease_data_button(type='submit')

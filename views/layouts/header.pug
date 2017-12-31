@@ -1,0 +1,70 @@
+.navbar-fixed
+    nav.hoverable(style="background-color: #660099")
+        div.nav-wrapper
+            div.row
+                div.col.s1.m1.l1
+                    //i.material-icons.left menu
+                    a.white-text.button-collapse.show-on-medium-and-up(style="background-color: #660099" data-activates='slide-out')
+                        i.fa.fa-bars.fa-2x
+                div.col.s4.m2.l2.offset-s3
+                    a.brand-logo(href='#') ApniCare
+
+
+                div.col.s12.m12.l5.offset-l4.hide-on-med-and-down
+                    div.fixed.right
+                        a.horizontal.btn-flat.btn-floating.btn-large(style="background-color: #660099").right.hide-on-large-only
+                            i.fa.fa-ellipsis-v
+                        ul
+                            li
+                                a.btn.btn-flat.white-text(style="background-color: #660099, height:50px" href='#')
+                                    i.fa.fa-exclamation-triangle
+                            li
+                                a.dropdown-button.btn-flat.white-text(style="background-color: #660099, height:50px" href='#')
+                                    i.fa.fa-bell
+                            li
+                                a.dropdown-button.btn-flat.white-text(href='#' style="background-color: #660099 ,height: 50px" data-activates='profile_icon' data-beloworigin='true')
+                                    i.fa.fa-user-circle
+
+                div.col.s1.m1.offset-s3.offset-m8.hide-on-large-only
+                    div
+                        a.btn-flat.btn-floating.btn-large.right.dropdown-button(href="#" data-activates="dropdown1" style="background-color: #660099" data-beloworigin="true")
+                            i.fa.fa-ellipsis-v
+                        ul#dropdown1.dropdown-content
+                            li
+                                a(href="#" data-activates='profile_icon' data-beloworigin='true')
+                                    i.fa.fa-user-circle
+                            li.divider
+                            li
+                                a(href="#")
+                                    i.fa.fa-bell
+                            li.divider
+                            li
+                                a(href="#")
+                                    i.fa.fa-exclamation-triangle
+
+//div.row
+    div.col.s4
+        ul.dropdown-content#profile_icon
+            li
+                div.card.black-text
+                    p This is a sample card
+                    div.divider
+            li
+                p This is another section
+                a.btn.purple.right(href='#') Sign-out
+
+
+
+
+
+//ul.side-nav#slide-out
+    li
+        a(href='/admin') <b>Home</b>
+            i.material-icons.left.tiny home
+    li
+        a(href='#') <b>Dashboard</b>
+            i.material-icons.left.tiny dashboard
+    li
+        a(href='#') <b>User View</b>
+            i.material-icons.left.tiny access_time
+

@@ -1,0 +1,49 @@
+p {
+    font: italic bold 20px Verdana, serif;
+    color: inherit;
+}
+.button {
+    background-color: #660099;
+    border: 1px solid grey;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: darkblue;
+}
+
+img#drug
+{
+    width: 100%;
+    max-width: 100%;
+    -webkit-filter: blur(3px);
+    filter: blur(5px);
+    filter: opacity(5%);
+}
+span#drugT1,span#drugT2 {
+    font-size: 15px;
+}
+/*<!-- for home "enter drug data here" option-->*/
+#home_card
+{
+    border: inset;
+}
+/* for profile-icon sub menu */
+.dropMe {
+    data-beloworigin: 'true';
+}
+.dropMe ul {
+
+}
+div#profile2.collection
+{
+    display: inherit;
+}
+
