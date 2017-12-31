@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+    body
+        h1 Edit details
+        form(action='/editconfidential', method='POST')
+            | aadhar_number :
+            input(type='text', name='aadhaar_number')
+            br
+            | income :
+            select(name='income', size='1')
+                option(value='Poor', name='poor') Poor
+                |
+                option(value='Normal', name='normal') Normal
+                |
+                option(value='Rich', name='rich') Rich
+            br
+            br
+            input(type='submit', name='submit')

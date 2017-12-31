@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+    body
+        h1 Verify Password
+        form(action='/editemergency', method='POST')
+            | Relative Name :
+            input(type='text', name='relative_name')
+            br
+            | Relative contact :
+            input(type='text', name='relative_contact')
+            br
+            | relation :
+            input(type='text', name='relation')
+            br
+            br
+            input(type='submit')
+

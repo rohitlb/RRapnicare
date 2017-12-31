@@ -1,0 +1,53 @@
+doctype html
+html
+    head
+    body
+        h1 Fill Molecule Details
+        form(action='/molecules', method='POST')
+            | Molecule Name :
+            input(type='text', name='molecule_name')
+            br
+            | Drug categories:
+            input(type='text', name='drug_categories')
+            br
+            | Description :
+            input(type='text', name='description')
+            br
+            | Absorption :
+            input(type='text', name='absorption')
+            br
+            | Distribution :
+            input(type='text', name='distribution')
+            br
+            | Metabolism :
+            input(type='text', name='metabolism')
+            br
+            | Excretion :
+            input(type='text', name='excretion')
+            br
+            | Side Effect :
+            input(type='text', name='side_effect')
+            br
+            | Precaution :
+            input(type='text', name='precaution')
+            br
+            | Drug interaction :
+            input(type='text', name='drug_interaction')
+            br
+            | food interaction :
+            input(type='text', name='food_interaction')
+            br
+            | Dosage :
+            input(type='text', name='dosage')
+            br
+            | Food :
+            input(type='text', name='food')
+            br
+            | Subhead :
+            input(type='text', name='subhead')
+            br
+            | information :
+            input(type='text', name='info')
+            br
+            br
+            input(type='submit')

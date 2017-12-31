@@ -1,0 +1,27 @@
+div.row#register
+    div.col.s12
+        div.input-field.col.s12.active
+            input.required(type="text")#name
+            label(for="name") Name
+
+        div.input-field.col.s12
+            input.validate(type="email")#email
+            label(for="email") Email
+
+        div.input-field.col.s12
+            input.required(type="text")#number
+            label(for="number") Number
+            //span(style={position: "absolute", right: "0"}).badge.btn.right#change ChangeNo.?
+            //span(style={position: "absolute", right: "0"}).badge.btn.right#send Send OTP
+        div.row.center
+            a.waves-effect.waves-purple.btn.hoverable.mediumpurple.buttu#send Continue
+            a.waves-effect.waves-purple.btn.hoverable.mediumpurple.buttu#Dsend Continue
+
+            br
+            br
+            a.waves-effect.waves-light.btn.modal-trigger.buttu#loginButton12 Existing User?Log in
+                //include ./modalRegister
+
+        include registerbut
+
+

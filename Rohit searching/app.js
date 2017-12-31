@@ -2040,7 +2040,8 @@ app.get('/searchmolecule',function (req,res) {
         }
         else{
             //res.send(result);
-            res.render('molecules',{data : result});
+            //res.render('molecules',{data : result});
+            res.send({data : result});
         }
     });
 });
@@ -2286,10 +2287,11 @@ app.post('/searching',function (req,res) {
 
     console.log(raw);
 
-   var spaceRemoved = raw.replace(/\s/g, '');
+    var spaceRemoved = raw.replace(/\s/g, '');
 
-    var reg = 'i';
-    var search = new RegExp(spaceRemoved,reg );
+    //var search = new RegExp('\\b'+spaceRemoved,'i' );
+    var search = new RegExp('^'+spaceRemoved,'i' );
+   // var search = new RegExp(spaceRemoved,'i' );1
     async.parallel([
         function (callback) {
             Company.find({company_name : search},function (err,result) {
