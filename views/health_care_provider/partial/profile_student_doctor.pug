@@ -4,16 +4,23 @@ div.collection#main_profile_student
     div.collection-item.dismissable
         div.row
             .col.s12.m12.l9.offset-l3
-                h5.bold.title1(style='font-size: 25px') Dr. #{data.name}
+                h5.bold.title1(style='font-size: 25px') Dr. #{data.name.toUpperCase()}
                 //h5.bold.title1(style='font-size: 25px') DRx. #{data.name}
                 br
                 span.flow-text Profile is not complete yet
 
-                div.right
-                        a.btn.white-text.right(href='#' style='background-color:#660099') Edit Profile
+    div.collection-item.dismissable
+        div.row
+            div.col.s12.m12.l9.offset-l3
+                div.col.s6.m3.l3
+                    span.flow-text Profile Completeness
+
+                div.col.s6.m5.l5.offset-l4.offset-m4
+
+                    a.btn.white-text.right(href='#' style='background-color:#660099') Edit Profile
                         //br
                         //br
-                        //div#test-slider
+                div#progressbar
     div.collection-item
         div.row
             div.col.s12.m12.l9.offset-l3

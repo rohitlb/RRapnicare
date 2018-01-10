@@ -6,13 +6,28 @@ $(function () {
         inDuration: 300,
         outDuration:200,
         startingTop:'4%',
-        endingTop: '5%'
+        endingTop: '11%'
     });
 
     $('#text1').val();
     $('#text1').trigger('autoresize');
 
     $(':reset');
+
+    // $( "#progressbar" ).progressbar(function(){
+    //     value: 35
+    // });
+
+
+    $( "#progressbar" ).progressbar({
+        disabled: true,
+        value: 35,
+        max: 98,
+        min: 20,
+        classes: {
+            "ui-progressbar": "highlight"
+        }
+    });
 
 
     $('#drug_form2').hide();
@@ -159,11 +174,19 @@ $(function () {
 
 
     $('.repeat').on('click', function() {
-        $('.repeater').append('<div><input id="subhead2" type="text" placeholder="Enter a subheading" class="browser-default repeat_subhead" required/><button class="remove">x</button>' +
+        $('.repeater').append('<div><input id="subhead2" type="text"  placeholder="Enter a subheading" class="browser-default repeat_subhead" required/><button class="remove">x</button>' +
             '<textarea class="text_subhead" id="subhead_text" required></textarea><label for="subhead2" style="color:black;font-size: 15px;font-weight: 400;">' +
             '</label></div></div>');
         return false; //prevent form submission
     });
+
+    $('.repeat1').on('click', function() {
+        $('.repeater').append('<div><input id="subhead2" type="text" list="contra" placeholder="Choose subheading" class="browser-default repeat_subhead" required/><button class="remove">x</button>' +
+            '<textarea class="text_subhead" id="subhead_text" required></textarea><label for="subhead2" style="color:black;font-size: 15px;font-weight: 400;">' +
+            '</label></div></div>');
+        return false; //prevent form submission
+    });
+
 
     $('.repeater').on('click', '.remove', function() {
         $(this).parent().remove();
@@ -179,42 +202,42 @@ $(function () {
 
     //$('.materialize-textarea').hide();
     //$('input#disease_name').hide();
-    $('.val17').show();
-    $('.val17').click(function () {
-        $('.val17').toggle();
-        $('#prevention').toggle();
-        $('#prevention').trigger('autoresize');
-    });
-    $('.val16').show();
-    $('.val16').click(function () {
-        $('.val16').hide();
-        $('#outlook').toggle();
-    });
-    $('.val15').show();
-    $('.val15').click(function () {
-        $('.val15').hide();
-        $('#treatment').toggle();
-    });
-    $('.val14').show();
-    $('.val14').click(function () {
-        $('.val14').hide();
-        $('#diagnosis').toggle();
-    });
-    $('.val13').show();
-    $('.val13').click(function () {
-        $('.val13').hide();
-        $('#causes').toggle();
-    });
-    $('.val12').show();
-    $('.val12').click(function () {
-        $('.val12').hide();
-        $('#risk_factors').toggle();
-    });
-    $('.val11').show();
-    $('.val11').click(function () {
-        $('.val11').hide();
-        $('#symptoms').toggle();
-    });
+    // $('.val17').show();
+    // $('.val17').click(function () {
+    //     $('.val17').toggle();
+    //     $('#prevention').toggle();
+    //     $('#prevention').trigger('autoresize');
+    // });
+    // $('.val16').show();
+    // $('.val16').click(function () {
+    //     $('.val16').hide();
+    //     $('#outlook').toggle();
+    // });
+    // $('.val15').show();
+    // $('.val15').click(function () {
+    //     $('.val15').hide();
+    //     $('#treatment').toggle();
+    // });
+    // $('.val14').show();
+    // $('.val14').click(function () {
+    //     $('.val14').hide();
+    //     $('#diagnosis').toggle();
+    // });
+    // $('.val13').show();
+    // $('.val13').click(function () {
+    //     $('.val13').hide();
+    //     $('#causes').toggle();
+    // });
+    // $('.val12').show();
+    // $('.val12').click(function () {
+    //     $('.val12').hide();
+    //     $('#risk_factors').toggle();
+    // });
+    // $('.val11').show();
+    // $('.val11').click(function () {
+    //     $('.val11').hide();
+    //     $('#symptoms').toggle();
+    // });
     // $('.val11').click(function () {
     //     $('.val1').hide();
     //     $('input#disease_name').toggle();
@@ -242,6 +265,8 @@ $(function () {
     // });
 
 
+    //$textarea.val($textarea.val().replace(/\n/g,"\n\u2022").replace(/\r/g,"\r\u2022"));
+
 
     //- ................... DISEASE DATA FORM SUBMIT ....................
     $('#disease_data_button').click(function () {
@@ -261,7 +286,8 @@ $(function () {
         var outlook = $('#outlook').val();
         var prevention = $('#prevention').val();
         var source = $('#source').val();
-
+        //alert(subhead1);
+        //alert(subhead2);
         var data = {
                 disease_name: disease_name,
                 symptoms: symptoms,
@@ -327,6 +353,25 @@ $(function () {
             primarily_used_for : primarily_used_for,
             warnings : warnings
         };
+        console.log(brand_name);
+        console.log(company_name);
+        console.log(categories);
+        console.log(strength1);
+        console.log(strength2);
+        console.log(potent_substances);
+        console.log(dosage_form);
+        console.log(packaging);console.log(price);console.log(prescription);console.log(dose_taken);console.log(type);
+        console.log(primarily_used_for);console.log(warnings);
+        console.log(dose_timing);
+
+
+
+
+
+
+
+
+
 
         $.ajax({
             url: '/medicine',

@@ -1,0 +1,43 @@
+div#Pcard3
+    div
+        div.row.Pheadings1
+            a(href="#") Refer Your Friends
+            //a.btn-flat.small.right#UPedit Edit
+            //a.btn-flat.small.right#UPcancel Cancel
+            br
+        form#InfoForm
+            div.row
+                div.row
+                    p Invite a friend via....
+                    ul
+                        li
+                            i.material-icons.prefix mail
+                            a.waves-effect.waves-light.btn-flat.modal-trigger(href='#modal2')#mail mail
+                            br
+                            i.material-icons.prefix message
+                            a.waves-effect.waves-light.btn-flat.modal-trigger(href='#modal3')#messaging Messaging
+                            #modal2.modal
+                                .modal-content(style={padding: "0px", margin: "0px", border: "0"})
+                                    a(href="/")
+                                        i.modal-action.modal-close.material-icons.right close
+                                        //mail body
+                                        div.row
+                                            .input-field.col.s12
+                                                span.black-text From
+                                                input#sender(type="text", value="null")
+                                                br
+                                            .divider
+                                            .input-field.col.s12
+                                                span.black-text To
+                                                input#reciever(type="text", value="null")
+                                                br
+                                            .divider
+                                            p.black-text Hey,
+                                                br
+                                                | I just used ApniCare on my Android as well as website.
+                                                br
+                                                | It is an inforative website/app to create awareness about
+                                                | your health related facilities.
+                                            p Get it now from
+                                            a(href='/homes?page=profilePage') https://www.ApniCare.com
+                                        a.waves-effect.waves-purple.btn.hoverable.right.mediumpurple#sendemail Send

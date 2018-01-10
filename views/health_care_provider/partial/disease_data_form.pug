@@ -7,7 +7,11 @@ div.row
                     form(name='disease_form', method='POST', onsubmit='return validateForm();', action='#')
 
                         center
-                            h4(style='font-weight:600;') Enter Disease Data
+                            h3(style='font-weight:600;') Enter Disease Data
+                            span.small_font (All&nbsp
+                            span.red-text *&nbsp
+                            span.small_font fields are mandatory)
+
                         div.col.s12.m12.l12
                             span.target1 Disease Name
                             span.red-text &nbsp*
@@ -16,20 +20,20 @@ div.row
                         div.col.s12.m12.l12
                             span.target2 What are its Symptoms?
                             span.red-text &nbsp*
-                            textarea#symptoms
+                            textarea.tobig#symptoms
                             label(for='symptoms', style='color:black;font-size: 15px;font-weight: 400;' required)
                             //input.val11(style='color:black;font-size: 15px;font-weight: 400;')
                         div.col.s12.m12.l12
                             span.target3 What are its possible Risk Factors?
                             span.red-text &nbsp*
-                            textarea#risk_factors
+                            textarea.tobig#risk_factors
                             label(for='risk_factors', style='color:black;font-size: 15px;font-weight: 400;' required)
                             //input.val12(type='text', style='color:black;font-size: 15px;font-weight: 400;')
 
                         div.col.s12.m12.l12
                             span.target4 What are its Causes?
                             span.red-text &nbsp*
-                            textarea#causes
+                            textarea.tobig#causes
                             label(for='causes', style='color:black;font-size: 15px;font-weight: 400;' required)
                             //input.val13(type='text', style='color:black;font-size: 15px;font-weight: 400;')
                             br
@@ -42,34 +46,34 @@ div.row
                                 div
                                     input.browser-default.repeat_subhead#subheading(type='text', placeholder='Enter a subheading' required)
                                     button.remove x
-                                    textarea.text_subhead#subhead_text
+                                    textarea.tobig.text_subhead#subhead_text
                                     label(for='subheading', style='color:black;font-size: 15px;font-weight: 400;' required)
                             button.repeat Add A Subheading
                         br
                         div.col.s12.m12.l12
                             span.target6 How is it Treated?
                             span.red-text &nbsp*
-                            textarea#treatment
+                            textarea.tobig#treatment
                             label(for='treatment', style='color:black;font-size: 15px;font-weight: 400;' required)
                             //input.val15(type='text', style='color:black;font-size: 15px;font-weight: 400;')
                         br
                         div.col.s12.m12.l12
                             span.target7 What is the Outlook for it?
                             span.red-text &nbsp*
-                            textarea#outlook
+                            textarea.tobig#outlook
                             label(for='outlook', style='color:black;font-size: 15px;font-weight: 400;' required)
                             //input.val16(type='text', style='color:black;font-size: 15px;font-weight: 400;')
                         br
                         div.col.s12.m12.l12
                             span.target8 How can #{disease_name} be Prevented?
                             span.red-text &nbsp*
-                            textarea#prevention
+                            textarea.tobig#prevention
                             label(for='prevention', style='color:black;font-size: 15px;font-weight: 400;' required)
                             //input.val17(type='text', style='color:black;font-size: 15px;font-weight: 400;')
                         div.col.s12.m12.l12
                             span.target8 Source of Information
                             span.red-text &nbsp*
-                            textarea#source
+                            textarea.tobig#source
                             label(for='source', style='color:black;font-size: 15px;font-weight: 400;' required)
 
                         br

@@ -7,10 +7,7 @@ var Disease = new Schema({
     symptoms : {type:String},
     risk_factor : {type : String},
     cause : {type : String},
-    subhead: [{
-        name1 : {type: String},
-        name2 : {type: String}
-    }],
+    diagnosis : {type : String},
     treatment : {type : String},
     outlook : {type : String},
     prevention : {type : String},

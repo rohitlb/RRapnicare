@@ -9,7 +9,7 @@ div.row
                     div.drug_alphabets.pull-left
                         span.center
                             ul
-                                li.active
+                                li
                                     a.btn2.all.hoverable(href='/health_care_provider?page=drug_data' type='all') All
                                 li
                                     a.btn2.hoverable(href='/health_care_provider?page=drug_data') A
@@ -152,6 +152,7 @@ div.row
                     div
                         span How useful is the data that we provide?
                         br
+                        br
                         input.with-gap#radio1(name='radio1_feedback' type='radio')
                         label(for='radio1') Very Useful
                         input.with-gap#radio2(name='radio1_feedback' type='radio')
@@ -174,9 +175,8 @@ div.row
                     br
                     div.input-field
                         span Suggest changes in data(if any)
-                        textarea#text2
+                        textarea(style='height:90px;')#text2
                         label(for='text2')
-                    br
                     br
 
                     div.row

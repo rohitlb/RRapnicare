@@ -85,14 +85,12 @@ div.row
                             span.bold What Causes #{val.disease_name.toUpperCase()}?
                             br
                             span.flow-text #{val.cause}
-                    if(val.subhead)
+                    if(val.diagnosis)
                         li.section.scrollspy#diagnosis
                             span.bold  How is #{val.disease_name.toUpperCase()} Diagnosed?
                             br
-                            each subhead in val.subhead
-                                - for(var i=0; i<subhead.name1.length; i=i+2)
-                                        span.flow-text #{subhead.name1[i]} #{subhead.name2[i]}
-                                        br
+                            each subhead in val.diagnosis
+                                span.flow-text #{subhead.subhead1} #{subhead.subhead2}
                     if(val.treatment)
                         li.section.scrollspy#treatment
                             span.bold How is #{val.disease_name.toUpperCase()} Treated?
@@ -142,6 +140,7 @@ div.row
                     div
                         span How useful is the data that we provide?
                         br
+                        br
                         input.with-gap#radio1(name='radio1_feedback' type='radio')
                         label(for='radio1') Very Useful&nbsp
                         input.with-gap#radio2(name='radio1_feedback' type='radio')
@@ -164,9 +163,8 @@ div.row
                     br
                     div.input-field
                         span Suggest changes in data(if any)
-                        textarea#text2
+                        textarea#text2(style='height:90px;')
                         label(for='text2')
-                    br
                     br
 
                     div.row

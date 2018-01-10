@@ -1,0 +1,46 @@
+doctype html
+html
+    head
+    body
+        h1 Fill your profile
+        form(action='/doctor_profile', method='POST')
+            | title :
+            select(name='title', size='1')
+                option(value='Dr', name='Dr') Dr
+                |
+                option(value='DRx', name='DR') Drx
+            br
+            | gender :
+            input(type='radio', name='gender', value='male', checked)
+            |Male
+            input(type='radio', name='gender', value='female' )
+            |Female
+            input(type='radio', name='gender', value='other')
+            | Other
+            br
+            | experience :
+            input(type='text', name='year_of_experience')
+            br
+            | aboutYou :
+            input(type='text', name='about_You')
+            br
+            | qualification :
+            input(type='text', name='qualification')
+            br
+            | college :
+            input(type='text', name='college')
+            br
+            | completion :
+            input(type='text', name='completion')
+            br
+            | council_number :
+            input(type='text', name='council_number')
+            br
+            | council_name :
+            input(type='text', name='council_name')
+            br
+            | council_year :
+            input(type='text', name='council_year')
+            br
+            br
+            input(type='submit')

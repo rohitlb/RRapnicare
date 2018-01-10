@@ -1,0 +1,74 @@
+div#Pcard3
+    div
+        div.row.Pheadings
+            a(href='/ApniCare?page=My Profile') Personal Information
+            a.btn-flat.small.right#UPedit Edit
+            a.btn-flat.small.right#UPcancel Cancel
+            br
+            br
+        form#InfoForm
+            div.row.Pformfordetail
+                div.row
+                    i.material-icons.prefix cake
+                    label Date Of Birth
+                    .input-field.input1#dateofbirth
+                        input#datepicker.textbox(type="text" , value=data.dob).datepicker
+                        //label(for="datepicker")
+                        br
+                        br
+
+                div.row
+                    i.material-icons.prefix wc
+                    label Your Gender
+                    br
+                    br
+
+                    input.with-gap(name="gender", type="radio", id="Ptest5", value="male")
+                    label(for="Ptest5") Male
+                    input.with-gap(name="gender", type="radio", id="Ptest6", value="female")
+                    label(for="Ptest6") Female
+                    input.with-gap(name="gender", type="radio", id="Ptest7", value="other")
+                    label(for="Ptest7") Others
+                br
+                br
+                div.row
+                    i.material-icons.prefix opacity
+                    label.strong Blood Group
+                    select.browser-default#Pbox
+                        option.disabled.selected(value="")
+                        option(value="A+" ) A+
+                        option(value="A-") A-
+                        option(value="B+") B+
+                        option(value="B-" ) B-
+                        option(value="AB+") AB+
+                        option(value="AB-") AB-
+                        option(value="O+") O+
+                        option(value="O-") O-
+                div.row
+                    br
+                    br
+                    i.material-icons.prefix favorite
+                    label Marital Status
+                    br
+                    br
+                    input.with-gap(name="marital", type="radio", id="Ptest1", value="married")
+                    label(for="Ptest1") Married
+                    input.with-gap(name="marital", type="radio", id="Ptest2", value="unmarried")
+                    label(for="Ptest2") UnMarried
+                div.row
+                    br
+                    i.material-icons.prefix import_export
+                    label Height
+                    .input-field.input1
+                        input.textbox(type="text", value=data.height)#Pheight
+                        //label(for="Pheight") Height
+                div.row
+                    br
+                    i.material-icons.prefix help
+                    label Weight
+                    .input-field.input1
+                        input.textbox(type="text", value=data.weight)#Pweight
+                        //label(for="Pheight") Weight
+                        br
+                div.row
+                    a.btn.right#PersonalDetailsSubmit Submit

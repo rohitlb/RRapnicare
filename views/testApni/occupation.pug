@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+    body
+        h1 Fill your profile
+        form(action='/occupation', method='POST')
+            | occupation :
+            input(type='radio', name='occupation', value='doctor', checked)
+            |Doctor
+            input(type='radio', name='occupation', value='pharma' )
+            |Pharma
+            br
+            br
+            input(type='submit')
