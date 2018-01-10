@@ -1,0 +1,212 @@
+i{
+    font-size: x-large;
+    margin-left: 10px;
+    color: #4a148c;
+}
+/*#dropdown1*/
+/*{*/
+/*min-width:15%;*/
+/*top: 1000px;*/
+/*left:200%;*/
+/*opacity: 1;*/
+/*}*/
+#Pcard0
+{
+    margin-left: -120px;
+}
+#Pcard1
+{
+
+    background-color:white;
+    /*padding: 2px;*/
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 1px;
+    border: inset;
+    border-width: 1px;
+    border-color: white;
+}
+#Pname
+{
+    margin-left: -90px;
+}
+#person
+{
+    margin-left: 30px;
+}
+.P
+{
+    padding: 0px;
+    margin: 0px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.P4
+{
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+    font-weight: lighter;
+}
+ul
+{
+    margin: 0px;
+}
+#Pcard2
+{
+    width: 100%;
+    background-color: white;
+    font-family: "Arabic Typesetting";
+    margin-top: 2px;
+    margin-left: 1px;
+    margin-right: 0px;
+    border: inset;
+    border-width: 1px;
+    border-color: white;
+}
+
+#Pcard3
+{
+    height:120% ;
+    width: 130%;
+    background-color: white;
+    padding: 40px;
+    padding-left: 100px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+    border: inset;
+    border-width: 1px;
+    border-color: white;
+}
+.Pspan1
+{
+    font-family: "cursive";
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 50px;
+    color: black;
+}
+.Pspan1:hover {
+    font-weight:bold ;
+    color: #660099;
+    box-shadow: lightgrey;
+}
+.lispan:hover
+{
+    background-color: lavender;
+}
+.Pspan2
+{
+    padding-left: 20px;
+    font-family: "Droid Serif";
+    font-size: 30px;
+    color: black;
+}
+
+body
+{
+    font-family: "Times New Roman";
+    background-color: rgba(102, 128, 116, 0.19);
+
+}
+span{
+    font-size: 20px;
+}
+.Pespan
+{
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+}
+/*search fiels*/
+.input
+{
+    background-color: white;
+    font-size: x-large;
+    font-weight: bold;
+}
+.input1
+{
+    width: 58%;
+
+}
+#input1 {
+    background-color:white;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    padding-left: 7%;
+    margin-left: 2%;
+}
+#Pphone,#pfirstname,#pemail
+{
+    font-size: larger;
+    color: black;
+}
+
+.label1
+{
+    color: black;
+    font-size: 3rem;
+    font-weight: bold;
+}
+#Psearch
+{
+    background-color: rgba(81, 255, 179, 0.01);
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+    height: 50px;
+    width: 150%;
+    margin-bottom: 0;
+    padding-bottom: 0px;
+}
+#Pbox
+{
+    margin-left: 39px;
+    width: 32%;
+}
+
+.Pformfordetail
+{
+    margin-left: 1%;
+
+}
+#Pdatepicker,#Pweight,#Pheight
+{
+    margin-left: 50px;
+    font-size: x-large;
+    width: 50%;
+    border-color: black;
+
+}
+label
+{
+    margin-left: 1rem;
+    font-size: x-large;
+    color:black;
+    font-weight: bold;
+}
+
+.Pheadings,.Pheadings1
+{
+    padding-left: 150px;
+    font-size:30px ;
+    color:#660099;
+}
+#dateofbirth
+{
+    font-size:x-large;
+    font-weight: bold;
+    width: 35%;
+    margin-left: 50px;
+}
+#modal2
+{
+    padding: 15px;
+    padding-top: 0px;
+    color: black;
+}

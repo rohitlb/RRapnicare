@@ -3,7 +3,6 @@ var Schema = mongoose.Schema;
 
 var Strength = new Schema({
     strength : {type : String},
-    strengths : {type: String},
     potent_substance : [{
         name : {type : String},
         molecule_strength : {type : String}

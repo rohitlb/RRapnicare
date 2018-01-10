@@ -1,0 +1,108 @@
+div
+    .container
+        div.row
+            div.col.s12.m5.l4#Pcard0
+                div#Pcard1
+                    div.row
+                        div.col.s5.m6.l6#Pperson
+                            i.material-icons.medium image
+                            //img#apnilogo.circle(src="/images/az.png",height="200%", width="100%")
+                        div.col.s7.m6.l6#Pname
+                            p.P4.black-text.strong Hello,
+                            p.P.black-text user
+                    //div.row.valign-wrapper
+                        div.col.s12
+                            form(action='#')
+                                .file-field.input-field
+                                    .btn
+                                        span File
+                                        input(type='file')
+                                    .file-path-wrapper
+                                        input.file-path.validate(type='text')#images
+                                        label(for="images")
+                                        a(href="#")
+                                            span.right.espan#upload upload
+
+                div#Pcard2
+                    div.row
+                        div.col.s12.m12.l12
+                            ul
+                                br
+                                li
+                                    i.material-icons.prefix account_circle
+                                        a(href="#").Pspan2 My Profile
+                                    br
+                                    br
+                                li.hoverable.lispan
+                                    a(href='/userprofile?page=My_Profile').Pspan1 Personal Information
+                                    br
+                                    br
+                                li.hoverable.lispan
+                                    a(href='/userprofile?page=Contact_Us').Pspan1 Contact Information
+                                    br
+                                    br
+                                li.hoverable.lispan
+                                    a(href='/userprofile?page=Confidential_Information').Pspan1 Confidential Information
+                                    br
+                                    br
+                                li.hoverable.lispan
+                                    a(href='/userprofile?page=Emergency_Contact_Details').Pspan1 Emergency Contact Details
+                                    br
+                                    br
+                                li.hoverable.lispan
+                                    a(href='/userprofile?page=Address').Pspan1 Address
+                                    br
+                                    br
+
+                                li.divider
+                            ul
+                                br
+                                li
+                                    i.material-icons.prefix local_activity
+                                    a(href='/userprofile?page=My Activity').Pspan2 My Activity
+                                    br
+                                    br
+                                li.hoverable
+                                    a(href="#").Pspan1 My Doctor
+                                    br
+                                    br
+                                li.hoverable
+                                    a(href="#").Pspan1 My Drugs
+                                    br
+                                    br
+                                li.hoverable
+                                    a(href="#").Pspan1 My Diseases
+                                    br
+                                    br
+                                li.divider
+                            ul
+                                br
+                                li
+                                    a(href='/userprofile?page=Refer Friends').Pspan2 Refer Friends
+                                li.divider
+                            ul
+                                br
+                                li
+                                    i.material-icons.small.prefix call
+                                    a(href='/userprofile?page=Contact Us').Pspan2 Contact Us
+                                    br
+                br
+                //i.material-icons person
+            div.col.s12.m7.l8
+                if(page == 'My_Profile')
+                    include ../UserProfile/PersonalInformation
+                else if(page == 'Contact_Us')
+                    include ../UserProfile/ContactUs
+                else if(page == 'Confidential_Information')
+                    include ../UserProfile/ConfidentialInformation
+                else if(page == 'Emergency_Contact_Details')
+                    include ../UserProfile/EmergencyContactDetails
+                else if(page == 'Address')
+                    include ../UserProfile/Address
+                else if(page == 'My Activity')
+                    include ../UserProfile/MyActivity
+                else if(page == 'Refer Friends')
+                    include ../UserProfile/ReferFriends
+                else if(page == 'Contact Us')
+                    include ../UserProfile/ContactUs
+

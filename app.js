@@ -40,7 +40,7 @@ var routes = require('./model/imagefile');
 var app = express();
 
 var store = new mongoDBStore({
-    uri : 'mongodb://localhost/final',
+    uri : 'mongodb://localhost/ApniCare',
     collection : 'mySessions'
 });
 
@@ -53,7 +53,7 @@ store.on('error',function (error) {
 app.disable('x-powered-by');
 
 //configure the app
-app.set('port',8383);
+app.set('port',8888);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -643,7 +643,7 @@ app.post('/verifydetailspassword',function (req,res) {
 });
 
 app.get('/updateusersdetails',function (req,res) {
-    if(req.session,userID) {
+    if(req.session.userID) {
         res.render('updateusersdetails');
     }
     res.send({status : "failure", message : "Please login first"});
@@ -1152,9 +1152,7 @@ app.post('/medicine',function(req,res) {
     var categories = req.body.categories;
     var primarilyusedfor = req.body.primarilyusedfor;
     var company_name = req.body.company_name;
-    var strengtH = req.body.strength1;
-    var strengtHH = req.body.strength2;
-    console.log(strengtHH);
+    var strengtH = req.body.strength;
     var types = req.body.types;
     var active_ingredients = req.body.potent_substance;
     var packaging = req.body.packaging;
@@ -1204,7 +1202,6 @@ app.post('/medicine',function(req,res) {
                             else {
                                 var STRength = new Strength({
                                     strength: strengtH,
-                                    strengths: strengtHH,
                                     potent_substance: {
                                         name: active_ingredients,
                                         molecule_strength: molecule_strengths
@@ -1309,7 +1306,6 @@ app.post('/medicine',function(req,res) {
                 else {
                     var strength = new Strength({
                         strength: strengtH,
-                        strengths: strengtHH,
                         potent_substance: {
                             name: active_ingredients,
                             molecule_strength: molecule_strengths
@@ -1402,7 +1398,6 @@ app.post('/medicine',function(req,res) {
                 else {
                     var sTrength = new Strength({
                         strength: strengtH,
-                        strengths: strengtHH,
                         potent_substance: {
                             name: active_ingredients,
                             molecule_strength: molecule_strengths
@@ -1454,7 +1449,6 @@ app.post('/medicine',function(req,res) {
                 else {
                     var strength = new Strength({
                         strength: strengtH,
-                        strengths: strengtHH,
                         potent_substance: {
                             name: active_ingredients,
                             molecule_strength: molecule_strengths
@@ -1667,87 +1661,43 @@ app.post('/disease',function (req,res) {
     var symptoms = req.body.symptoms;
     var risk_factor = req.body.risk_factor;
     var cause = req.body.cause;
-    var subhead1 = req.body.subhead1;
-    var subhead2 = req.body.subhead2;
+    var diagnosis = req.body.diagnosis;
     var treatment = req.body.treatment;
     var outlook = req.body.outlook;
     var prevention = req.body.prevention;
     var source = req.body.source;
 
-    var subhead11 = [];
-    subhead11['subhead1'] = {};
-    for (var i = 0; i < subhead1.length; i++) {
-        subhead11['subhead1'] = {
-            subhead1: subhead1
-        }
-    }
-
-    var subhead22 = [];
-    subhead22['subhead2'] = {};
-    for (var j = 0; j < subhead2.length; j++) {
-        subhead22['subhead2'] = {
-            subhead2: subhead2
-        }
-    }
-
-    var disease = new Disease({
-        disease_name: disease_name,
-        symptoms: symptoms,
-        risk_factor: risk_factor,
-        cause: cause,
-        treatment: treatment,
-        outlook: outlook,
-        prevention: prevention,
-        source: source
-    });
-
-    disease.save(function (err) {
+    Disease.findOne({disease_name : disease_name},function (err,result) {
         if (err) {
             console.log(err);
         }
         else {
-            async.each(subhead11.subhead1.subhead1, function (user, callback) {
-                console.log(user);
-                Disease.update({disease_name: disease_name}, {
-                    $push: {
-                        'subhead.0.name1': user
-                    }
-                }, function (err) {
+            console.log(result);
+            if (result != null) {
+                res.send("Medicine already exists");
+            }
+            else {
+                var disease = new Disease({
+                    disease_name: disease_name,
+                    symptoms: symptoms,
+                    risk_factor: risk_factor,
+                    cause: cause,
+                    diagnosis: diagnosis,
+                    treatment: treatment,
+                    outlook: outlook,
+                    prevention: prevention,
+                    source : source
+                });
+
+                disease.save(function (err) {
                     if (err) {
-                        callback(err);
+                        console.log(err);
                     }
                     else {
-                        callback();
+                        res.send("medicine saved successfully");
                     }
                 });
-            }, function (err) {
-                if (err) {
-                    console.log(err);
-                }
-                else {
-                    async.each(subhead22.subhead2.subhead2, function (user2, callback1) {
-                        Disease.update({disease_name: disease_name}, {
-                            $push: {
-                                'subhead.0.name2' : user2
-                            }
-                        }, function (err) {
-                            if (err) {
-                                callback1(err);
-                            }
-                            else {
-                                callback1();
-                            }
-                        });
-                    }, function (err) {
-                        if (err) {
-                            console.log(err);
-                        }
-                        else {
-                            res.send("disease saved successfully");
-                        }
-                    });
-                }
-            });
+            }
         }
     });
 });
@@ -2050,9 +2000,8 @@ app.post('/doctorasuser',function (req,res) {
 ///////////////////////////////////////Doctor  Profile Insert //////////////////////////////////////////////////////////
 
 app.get('/health_care_provider',function(req,res) {
-    var page = 'home';
+    var page = 'profile';
     var brand = req.query.brand;
-    var disease = req.query.disease;
 
     if(req.query.page == 'profile') {
         Doctor.findOne({_id: req.session.doctorID}, function (err, result) {
@@ -2126,24 +2075,6 @@ app.get('/health_care_provider',function(req,res) {
         });
     }
 
-    if(req.query.page == 'pharma_registered') {
-        Pharma.findOne({_id: req.session.pharmaID}, function (err, result) {
-            if (err) {
-                console.log(err)
-            }
-            else {
-                if (req.query.page == 'pharma_registered')
-                    page = req.query.page;
-                res.render('home_profile_doctor',
-                    {
-                        page: page,
-                        data: result
-
-                    });
-            }
-        });
-    }
-
     if(req.query.page == 'profile_doctor') {
         Doctor.findOne({_id: req.session.doctorID}, function (err, result) {
             if (err) {
@@ -2166,9 +2097,9 @@ app.get('/health_care_provider',function(req,res) {
 
         Brand.find({brand_name : brand},'-_id brand_name categories primarily_used_for').populate(
             {path : 'dosage_id', select : '-_id dosage_form',populate :
-                {path : 'strength_id', select : '-_id strength strengths packaging prescription dose_taken warnings price dose_timing potent_substance.name'}
+                {path : 'strength_id', select : '-_id strength packaging prescription dose_taken warnings dose_timing potent_substance.name'}
             }).populate(
-            {path : 'company_id', select: '-_id company_name'}).sort({brand_name : 1}).exec(function (err,brand) {
+                {path : 'company_id', select: '-_id company_name'}).sort({brand_name : 1}).exec(function (err,brand) {
             if (err) {
                 console.log(err);
             }
@@ -2201,38 +2132,6 @@ app.get('/health_care_provider',function(req,res) {
             });
     }
 
-    if(req.query.page == 'disease_data_view'){
-        page = req.query.page;
-        res.render('home_profile_doctor',
-            {
-                page: page,
-                data: disease
-            });
-    }
-
-    if(req.query.disease) {
-
-        Disease.find({disease_name : disease}).exec(function (err,disease) {
-            if (err) {
-                console.log(err);
-            }
-            else {
-                if(disease != "") {
-                    res.render('home_profile_doctor',
-                        {
-                            page: 'disease_data_view',
-                            data: disease
-                        });
-                }
-                else{
-                    res.send({details : "failure", message : "No such disease exist"});
-                }
-            }
-        });
-    }
-
-
-
     if(req.query.page == 'profile_pharmacist') {
         Pharma.findOne({_id: req.session.pharmaID}, function (err, result) {
             if (err) {
@@ -2255,7 +2154,7 @@ app.get('/health_care_provider',function(req,res) {
 
         Brand.find({},'-_id brand_name categories').populate(
             {path : 'dosage_id', select : '-_id dosage_form',populate :
-                {path : 'strength_id', select : '-_id strength strengths packaging potent_substance.name'}
+                {path : 'strength_id', select : '-_id strength packaging potent_substance.name'}
             }).populate({path : 'company_id', select: '-_id company_name'}).sort({brand_name : 1}).exec(function (err,brand) {
             if (err) {
                 console.log(err);
@@ -2274,45 +2173,30 @@ app.get('/health_care_provider',function(req,res) {
                 else{
                     res.send({details : "failure", message : "No brand exist"});
                 }
-<<<<<<< HEAD
             }
         });
     }
-=======
-            });
-        }
-    ],function (err,results) {
-        if(err){
-            console.log(err);
-        }
-        else {
-            res.send(results);
-
-        }
-    });
-});
->>>>>>> 986a0e41cdb0a14ed4d5e32b0692efd7d8ce13cf
 
     if(req.query.page == 'disease_data') {
 
         //console.log('Hey there');
-        Disease.find().exec(function (err,disease) {
+        Disease.find().populate({path : 'dosage_id',populate : {path : 'strength_id'}}).populate({path : 'company_id'}).exec(function (err,brand) {
             if (err) {
                 console.log(err);
             }
             else {
-                if (req.query.page == 'home' || req.query.page == 'profile_doctor' || req.query.page == 'profile_student_pharmacist' || req.query.page == 'profile' ||  req.query.page == 'profile_student_doctor' || req.query.page == 'profile_pharmacist' || req.query.page == 'drug_data' || req.query.page == 'molecule_data' || req.query.page == 'disease_data' || req.query.page == 'drug_data_form' || req.query.page == 'molecule_data_form' || req.query.page == 'disease_data_form' || req.query.page == 'feedback_contributions' || req.query.page == 'feedback_profile' || req.query.page == 'notifications' || req.query.page == 'need_help')
+                if (req.query.page == 'home' || req.query.page == 'profile_doctor' || req.query.page == 'profile_student_pharmacist' || req.query.page == 'profile' || req.query.page == 'profile_student_doctor' || req.query.page == 'profile_pharmacist' || req.query.page == 'drug_data' || req.query.page == 'molecule_data' || req.query.page == 'disease_data' || req.query.page == 'drug_data_form' || req.query.page == 'molecule_data_form' || req.query.page == 'disease_data_form' || req.query.page == 'feedback_contributions' || req.query.page == 'feedback_profile' || req.query.page == 'notifications' || req.query.page == 'need_help')
                     page = req.query.page;
                 res.render('home_profile_doctor',
                     {
                         page: page,
-                        data: disease
+                        data: brand
+
                     });
             }
         });
     }
 
-<<<<<<< HEAD
     if(req.query.page == 'drug_data_form') {
 
         var brand = req.body.brand;
@@ -2329,24 +2213,6 @@ app.get('/health_care_provider',function(req,res) {
                         page: page,
                         data: brand
 
-                    });
-            }
-        });
-    }
-
-    if(req.query.page == 'disease_data_form') {
-        var disease = req.body.disease;
-        console.log(disease);
-        Disease.find({disease_name: disease}, function (err, disease) {
-            if (err) {
-                console.log(err);
-            }
-            else {
-                page = req.query.page;
-                res.render('home_profile_doctor',
-                    {
-                        page: page,
-                        data: disease
                     });
             }
         });
@@ -2372,23 +2238,6 @@ app.get('/health_care_provider',function(req,res) {
         });
     }
 
-    if(req.query.page == 'need_help') {
-        Doctor.findOne({_id: req.session.doctorID}, function (err, result) {
-            if (err) {
-                console.log(err)
-            }
-            else {
-                if (req.query.page == 'home' || req.query.page == 'profile_doctor' ||  req.query.page == 'profile_student_doctor'  || req.query.page == 'profile_student_pharmacist' || req.query.page == 'profile' || req.query.page == 'profile_pharmacist' || req.query.page == 'drug_data' || req.query.page == 'molecule_data' || req.query.page == 'disease_data' || req.query.page == 'drug_data_form' || req.query.page == 'molecule_data_form' || req.query.page == 'disease_data_form' || req.query.page == 'feedback_contributions' || req.query.page == 'feedback_profile' || req.query.page == 'notifications' || req.query.page == 'need_help')
-                    page = req.query.page;
-                res.render('home_profile_doctor',
-                    {
-                        page: page,
-                        data: result
-
-                    });
-            }
-        });
-    }
 
     if(req.query.page == 'image') {
         Doctor.findOne({_id: req.session.doctorID}, function (err, result) {
@@ -2408,7 +2257,7 @@ app.get('/health_care_provider',function(req,res) {
         });
     }
 
-    if((!req.query.page) && (!req.query.brand) && (!req.query.disease)) {
+    if((!req.query.page) && (!req.query.brand)) {
 
         Doctor.findOne({_id: req.session.doctorID}, function (err, result) {
             if (err) {
@@ -2430,9 +2279,8 @@ app.get('/health_care_provider',function(req,res) {
 });
 
 app.post('/health_care_provider',function(req,res) {
-    var page = 'home';
+    var page = 'profile';
     var brand = req.query.brand;
-    var disease = req.query.disease;
 
     if(req.query.page == 'profile') {
         Doctor.findOne({_id: req.session.doctorID}, function (err, result) {
@@ -2506,24 +2354,6 @@ app.post('/health_care_provider',function(req,res) {
         });
     }
 
-    if(req.query.page == 'pharma_registered') {
-        Pharma.findOne({_id: req.session.pharmaID}, function (err, result) {
-            if (err) {
-                console.log(err)
-            }
-            else {
-                if (req.query.page == 'pharma_registered')
-                    page = req.query.page;
-                res.render('home_profile_doctor',
-                    {
-                        page: page,
-                        data: result
-
-                    });
-            }
-        });
-    }
-
     if(req.query.page == 'profile_doctor') {
         Doctor.findOne({_id: req.session.doctorID}, function (err, result) {
             if (err) {
@@ -2546,7 +2376,7 @@ app.post('/health_care_provider',function(req,res) {
 
         Brand.find({brand_name : brand},'-_id brand_name categories primarily_used_for').populate(
             {path : 'dosage_id', select : '-_id dosage_form',populate :
-                {path : 'strength_id', select : '-_id strength strengths packaging prescription dose_taken warnings price dose_timing potent_substance.name'}
+                {path : 'strength_id', select : '-_id strength packaging prescription dose_taken warnings dose_timing potent_substance.name'}
             }).populate(
             {path : 'company_id', select: '-_id company_name'}).sort({brand_name : 1}).exec(function (err,brand) {
             if (err) {
@@ -2581,38 +2411,6 @@ app.post('/health_care_provider',function(req,res) {
             });
     }
 
-    if(req.query.page == 'disease_data_view'){
-        page = req.query.page;
-        res.render('home_profile_doctor',
-            {
-                page: page,
-                data: disease
-            });
-    }
-
-    if(req.query.disease) {
-
-        Disease.find({disease_name : disease}).exec(function (err,disease) {
-            if (err) {
-                console.log(err);
-            }
-            else {
-                if(disease != "") {
-                    res.render('home_profile_doctor',
-                        {
-                            page: 'disease_data_view',
-                            data: disease
-                        });
-                }
-                else{
-                    res.send({details : "failure", message : "No such disease exist"});
-                }
-            }
-        });
-    }
-
-
-
     if(req.query.page == 'profile_pharmacist') {
         Pharma.findOne({_id: req.session.pharmaID}, function (err, result) {
             if (err) {
@@ -2635,7 +2433,7 @@ app.post('/health_care_provider',function(req,res) {
 
         Brand.find({},'-_id brand_name categories').populate(
             {path : 'dosage_id', select : '-_id dosage_form',populate :
-                {path : 'strength_id', select : '-_id strength strengths packaging potent_substance.name'}
+                {path : 'strength_id', select : '-_id strength packaging potent_substance.name'}
             }).populate({path : 'company_id', select: '-_id company_name'}).sort({brand_name : 1}).exec(function (err,brand) {
             if (err) {
                 console.log(err);
@@ -2661,7 +2459,7 @@ app.post('/health_care_provider',function(req,res) {
     if(req.query.page == 'disease_data') {
 
         //console.log('Hey there');
-        Disease.find().exec(function (err,disease) {
+        Disease.find().populate({path : 'dosage_id',populate : {path : 'strength_id'}}).populate({path : 'company_id'}).exec(function (err,brand) {
             if (err) {
                 console.log(err);
             }
@@ -2671,7 +2469,8 @@ app.post('/health_care_provider',function(req,res) {
                 res.render('home_profile_doctor',
                     {
                         page: page,
-                        data: disease
+                        data: brand
+
                     });
             }
         });
@@ -2698,24 +2497,6 @@ app.post('/health_care_provider',function(req,res) {
         });
     }
 
-    if(req.query.page == 'disease_data_form') {
-        var disease = req.body.disease;
-        console.log(disease);
-        Disease.find({disease_name: disease}, function (err, disease) {
-            if (err) {
-                console.log(err);
-            }
-            else {
-                page = req.query.page;
-                res.render('home_profile_doctor',
-                    {
-                        page: page,
-                        data: disease
-                    });
-            }
-        });
-    }
-
     if(req.query.page == 'molecule_data') {
 
         Brand.find().populate({path : 'dosage_id',populate : {path : 'strength_id'}}).populate({path : 'company_id'}).exec(function (err,brand) {
@@ -2736,23 +2517,6 @@ app.post('/health_care_provider',function(req,res) {
         });
     }
 
-    if(req.query.page == 'need_help') {
-        Doctor.findOne({_id: req.session.doctorID}, function (err, result) {
-            if (err) {
-                console.log(err)
-            }
-            else {
-                if (req.query.page == 'home' || req.query.page == 'profile_doctor' ||  req.query.page == 'profile_student_doctor'  || req.query.page == 'profile_student_pharmacist' || req.query.page == 'profile' || req.query.page == 'profile_pharmacist' || req.query.page == 'drug_data' || req.query.page == 'molecule_data' || req.query.page == 'disease_data' || req.query.page == 'drug_data_form' || req.query.page == 'molecule_data_form' || req.query.page == 'disease_data_form' || req.query.page == 'feedback_contributions' || req.query.page == 'feedback_profile' || req.query.page == 'notifications' || req.query.page == 'need_help')
-                    page = req.query.page;
-                res.render('home_profile_doctor',
-                    {
-                        page: page,
-                        data: result
-
-                    });
-            }
-        });
-    }
 
     if(req.query.page == 'image') {
         Doctor.findOne({_id: req.session.doctorID}, function (err, result) {
@@ -2772,7 +2536,7 @@ app.post('/health_care_provider',function(req,res) {
         });
     }
 
-    if((!req.query.page) && (!req.query.brand) && (!req.query.disease)) {
+    if((!req.query.page) && (!req.query.brand)) {
 
         Doctor.findOne({_id: req.session.doctorID}, function (err, result) {
             if (err) {
@@ -2792,6 +2556,25 @@ app.post('/health_care_provider',function(req,res) {
         });
     }
 });
+
+app.get('/apphealth_care_provider',function(req,res){
+    Brand.find({},'-_id brand_name categories').populate(
+        {path : 'dosage_id', select : '-_id dosage_form',populate :
+            {path : 'strength_id', select : '-_id strength packaging potent_substance.name'}
+        }).populate({path : 'company_id', select: '-_id company_name'}).sort({brand_name : 1}).exec(function (err,brand) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+                res.send(
+                    {
+                        message : 'brand Data',
+                        data: brand
+                    });
+            }
+    });
+});
+
 
 //////////////////// DRUG DATA VIEW//////////////////////////////
 
@@ -3022,7 +2805,7 @@ app.post('/profession',function (req,res) {
 app.post('/basic',function (req,res) {
     var title = req.body.title;
     var name = req.body.name;
-    var email = req.body.email;
+    console.log(name);
     var gender = req.body.gender;
     var city = req.body.city;
     var experience = req.body.experience;
@@ -3032,7 +2815,6 @@ app.post('/basic',function (req,res) {
         $set : {
             title: title,
             name: name,
-            email : email,
             gender : gender,
             city : city,
             year_of_experience : experience,
@@ -3189,7 +2971,6 @@ app.post('/pharma_profession',function (req,res) {
 app.post('/pharma_basic',function (req,res) {
     var title = req.body.title;
     var name = req.body.name;
-    var email = req.body.email;
     var gender = req.body.gender;
     var city = req.body.city;
     var experience = req.body.experience;
@@ -3199,7 +2980,6 @@ app.post('/pharma_basic',function (req,res) {
         $set : {
             title: title,
             name: name,
-            email: email,
             gender : gender,
             city : city,
             year_of_experience : experience,
@@ -3333,100 +3113,7 @@ app.post('/pharma_certificate',function (req,res) {
         }
     });
 });
-
-app.post('/doctorregistration',function(req,res){
-    var name= req.body.name;
-    var number = req.body.number;
-    var email = req.body.email;
-    var password = req.body.password;
-    var doctor = new Doctor({
-        name : name,
-        number : number,
-        email: email,
-        password : password
-    });
-    doctor.save(function(err,result){
-        if(err){
-            console.log(err);
-        }
-        else {
-            req.session.doctorID = result._id;
-            //res.send({status : 'success', message : 'successfully registered'});
-            res.redirect('/health_care_provider?page=profile');
-        }
-    })
-});
-
-app.post('/pharmaregistration',function(req,res){
-    var name= req.body.name;
-    var number = req.body.number;
-    var email = req.body.email;
-    var password = req.body.password;
-    var pharma = new Pharma({
-        name : name,
-        number : number,
-        email: email,
-        password : password
-    });
-    pharma.save(function(err,result){
-        if(err){
-            console.log(err);
-        }
-        else {
-            req.session.pharmaID = result._id;
-            //res.send({status : 'success', message : 'successfully registered'});
-            res.redirect('/health_care_provider?page=pharma_registered');
-        }
-    })
-});
-
-app.post('/healthcarelogin',function(req,res) {
-    var number = req.body.number;
-    var password = req.body.password;
-
-    async.parallel({
-        doctor: function (callback) {
-            Doctor.find({number: number, password: password}, function (err, result) {
-                if (err) {
-                    console.log(err);
-                }
-                else {
-                    callback(null, result);
-                }
-            })
-        },
-        doctor: function (callback) {
-            Doctor.find({number: number, password: password}, function (err, result) {
-                if (err) {
-                    console.log(err);
-                }
-                else {
-                    callback(null, result);
-                }
-            })
-        }
-    },
-        function (err,result) {
-            if(err){
-                console.log(err);
-        }
-        else{
-                if(result.doctor== "" && result.pharma =="") {
-                    res.send({status : "failure", message : "enter correct details"});
-                }
-                    else{
-                        if(result.doctor != ""){
-                            req.session.doctorID = result.doctor[0]._id;
-                            res.redirect('/health_care_provider');
-                        }
-                        if(result.pharma != "") {
-                            req.session.pharmaID = result.pharma[0]._id;
-                            res.redirect('/health_care_provider');
-                        }
-                    };
-                }
-        })
-});
+//
 
 //==========================Database connection===========================
 
@@ -3444,10 +3131,5 @@ database.on('open', function () {
         console.log('server connected to http:localhost:' + app.get('port'));
     });
 });
-=======
-//data base connection and opening port
-var db = 'mongodb://localhost/final';
-mongoose.connect(db, {useMongoClient: true});
->>>>>>> 986a0e41cdb0a14ed4d5e32b0692efd7d8ce13cf
 
 

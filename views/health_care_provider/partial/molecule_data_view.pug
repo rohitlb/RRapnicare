@@ -1,0 +1,104 @@
+div.row
+    div.col.s12.m12.l9.offset-l3
+        img#drug(src='/images/drugsData.jpg', style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;')
+        div#drugdata
+            .col.s12.m12.l11.offset-l1
+                br
+
+                div.row
+                    div.drug_alphabets.pull-left
+                        span.center
+                            ul
+                                li.active
+                                    a.btn2.all.hoverable(href='/health_care_provider?page=molecule_data' type='all') All
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') A
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') B
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') C
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') D
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') E
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') F
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') G
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') H
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') I
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') J
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') K
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') L
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') M
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') N
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') O
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') P
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') Q
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') R
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') S
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') T
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') U
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') V
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') W
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') X
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') Y
+                                li
+                                    a.btn2.hoverable(href='/health_care_provider?page=molecule_data') Z
+                                li
+                                    a.btn2.all.hoverable(href='/health_care_provider?page=molecule_data' type='other') Other
+
+        div.col.s12.m12.l12
+            div.col.grey.lighten-3.s12.m8.l8.offset-l1
+                ul
+                    each val in data
+                        h3 Molecule name
+                        li  #{val.molecule_name}
+                        h3 Drug categories
+                        li  #{val.drug_categories}
+                        h3 description
+                        li #{val.description}
+                        h3 absorption
+                        li #{val.absorption}
+                        h3 distribution
+                        li #{val.distribution}
+                        h3 metabolism
+                        li #{val.metabolism}
+                        h3 excretion
+                        li #{val.excretion}
+                        h3 Adverse Reaction
+                        li #{val.side_effect}
+                        h3 Precaution
+                        li #{val.precaution}
+                        h3 drug_interaction
+                        li #{val.drug_interaction}
+                        h3 drug_interaction
+                        li #{val.drug_interaction}
+                        h3 Dosage
+                        li #{val.dosage}
+                        h3 Food
+                        li #{val.food}
+                        h3 List of contradictions
+                        h4 subhead
+                        li #{val.contradictions[0].subhead}
+                        h4 information
+                        li #{val.contradictions[1].info}
+
