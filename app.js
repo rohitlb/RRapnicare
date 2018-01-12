@@ -40,7 +40,9 @@ var routes = require('./model/imagefile');
 var app = express();
 
 var store = new mongoDBStore({
-    uri : 'mongodb://localhost/ApniCare',
+    //uri : 'mongodb://localhost/ApniCare',
+    uri : 'mongodb://localhost/final',
+
     collection : 'mySessions'
 });
 
@@ -1763,6 +1765,7 @@ app.get('/search_molecule',function (req,res) {
             console.log(err);
         }
         else {
+            console.log(result);
             res.render('moleculedetails', {data: result});
         }
     });
@@ -1934,6 +1937,7 @@ app.get('/searchmolecule',function (req,res) {
         }
         else{
             //res.send(result);
+            console.log(result);
             res.render('molecules',{data : result});
         }
     });
@@ -3115,10 +3119,179 @@ app.post('/pharma_certificate',function (req,res) {
 });
 //
 
+
+app.get('/searching',function (req,res) {
+    res.render('searching');
+});
+
+// it can skip search elements
+app.post('/searching', function (req,res) {
+    var raw = req.body.search;
+    var skip = parseInt(req.body.nskip);
+    var spaceRemoved = raw.replace(/\s/g, '');
+    var search = new RegExp('^'+spaceRemoved,'i' );
+    async.parallel([
+        function (callback) {
+
+            Molecule.find({molecule_name : search},'-_id molecule_name').sort({molecule_name : 1}).skip(skip).limit(10).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    callback(null,result);
+                    console.log(typeof result);
+
+                    }
+                });
+            }
+
+    ],function (err,results) {
+        if(err){
+            console.log(err);
+        }
+        else {
+            res.send(results);
+
+            console.log(results);
+        }
+    });
+});
+//var q = Post.find().sort( "rating" ).skip(10).limit(10);
+//
+// app.post('/searching',function (req,res) {
+//     console.log("app");
+//
+//     var raw = req.body.search;
+//
+//     console.log(raw);
+//
+//     var spaceRemoved = raw.replace(/\s/g, '');
+//
+//     //var search = new RegExp('\\b'+spaceRemoved,'i' );
+//     var search = new RegExp('^'+spaceRemoved,'i' );
+//     // var search = new RegExp(spaceRemoved,'i' );1
+//     async.parallel([
+//         function (callback) {
+//             Molecule.find({molecule_name : search},'-_id molecule_name').sort({molecule_name : 1}).exec(function (err,result) {
+//                 if(err){
+//                     console.log(err);
+//                 }
+//                 else{
+//                     console.log("");
+//                     console.log(typeof result);
+//                     console.log("");
+//                     callback(null,result);
+//
+//                     var a = JSON.parse(result);
+//                     console.log(typeof a);
+//
+//
+//                 }
+//             });
+//         }
+//
+//
+//         // after entering keywords in database
+//         //
+//         // async.parallel([
+//         //     function (callback) {
+//         //         User.find({keywords : search},function (err,result) {
+//         //             if(err){
+//         //                 console.log(err);
+//         //             }
+//         //             else {
+//         //                 callback(null, result);
+//         //             }
+//         //         });
+//         //     },
+//         //     function (callback) {
+//         //         Doctor.find({keywords : search},function (err,result) {
+//         //             if(err){
+//         //                 console.log(err);
+//         //             }
+//         //             else{
+//         //                 callback(null,result);
+//         //             }
+//         //         });
+//         //     },
+//         //     function (callback) {
+//         //         Company.find({keywords : search},function (err,result) {
+//         //             if(err){
+//         //                 console.log(err);
+//         //             }
+//         //             else{
+//         //                 callback(null,result);
+//         //             }
+//         //         });
+//         //     },
+//         //     function (callback) {
+//         //         Brand.find({keywords : search},function (err,result) {
+//         //             if(err){
+//         //                 console.log(err);
+//         //             }
+//         //             else{
+//         //                 callback(null,result);
+//         //             }
+//         //         });
+//         //     },
+//         //     function (callback) {
+//         //         Dosage.find({keywords : search},function (err,result) {
+//         //             if(err){
+//         //                 console.log(err);
+//         //             }
+//         //             else{
+//         //                 callback(null,result);
+//         //             }
+//         //         });
+//         //     },
+//         //     function (callback) {
+//         //         Strength.find({keywords : search},function (err,result) {
+//         //             if(err){
+//         //                 console.log(err);
+//         //             }
+//         //             else{
+//         //                 callback(null,result);
+//         //             }
+//         //         });
+//         //     },
+//         //     function (callback) {
+//         //         Disease.find({keywords : search},function (err,result) {
+//         //             if(err){
+//         //                 console.log(err);
+//         //             }
+//         //             else{
+//         //                 callback(null,result);
+//         //             }
+//         //         });
+//         //     },
+//         //     function (callback) {
+//         //         Molecule.find({keywords : search},function (err,result) {
+//         //             if(err){
+//         //                 console.log(err);
+//         //             }
+//         //             else{
+//         //                 callback(null,result);
+//         //             }
+//         //         });
+//         //     }
+//
+//     ],function (err,results) {
+//         if(err){
+//             console.log(err);
+//         }
+//         else {
+//             res.send(results);
+//
+//             console.log(results);
+//         }
+//     });
+// });
+
+
 //==========================Database connection===========================
 
 //data base connection and opening port
-var db = 'mongodb://localhost/ApniCare';
+var db = 'mongodb://localhost/final';
 mongoose.connect(db, {useMongoClient: true});
 
 

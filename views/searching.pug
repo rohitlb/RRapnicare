@@ -3,9 +3,12 @@ html
     head
     body
         h1 Enter medicine details
-        form(action='/searchdisease', method='POST')
+        form(action='/searching', method='POST')
             | Search Disease :
-            input(type='text', name='disease')
+            input(type='text', name='search')
             br
+            | number of skips :
+            input(type='text', name='nskip')
+
             br
             input(type='submit', name='submit')
