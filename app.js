@@ -41,7 +41,7 @@ var app = express();
 
 var store = new mongoDBStore({
     //uri : 'mongodb://localhost/ApniCare',
-    uri : 'mongodb://localhost/ApniCare',
+    uri : 'mongodb://localhost/RRapnicare',
 
     collection : 'mySessions'
 });
@@ -3311,7 +3311,7 @@ app.post('/searching', function (req,res) {
 //==========================Database connection===========================
 
 //data base connection and opening port
-var db = 'mongodb://localhost/ApniCare';
+var db = 'mongodb://localhost/RRapnicare';
 mongoose.connect(db, {useMongoClient: true});
 
 
