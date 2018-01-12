@@ -41,7 +41,7 @@ var app = express();
 
 var store = new mongoDBStore({
     //uri : 'mongodb://localhost/ApniCare',
-    uri : 'mongodb://localhost/final',
+    uri : 'mongodb://localhost/ApniCare',
 
     collection : 'mySessions'
 });
@@ -55,7 +55,7 @@ store.on('error',function (error) {
 app.disable('x-powered-by');
 
 //configure the app
-app.set('port',8888);
+app.set('port',9000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -3120,20 +3120,37 @@ app.post('/pharma_certificate',function (req,res) {
 //
 
 
+app.get('/information', function (req,res) {
+    res.render('information');
+});
+
+app.post('/information', function (req,res) {
+    var molecule = req.body.molecule;
+    console.log(molecule);
+
+    Molecule.find({molecule_name : molecule}).exec(function (err, result) {
+        res.send(result);
+    });
+});
+
+
 app.get('/searching',function (req,res) {
     res.render('searching');
 });
 
-// it can skip search elements
+// it can skip search elements by lazy loading
 app.post('/searching', function (req,res) {
-    var raw = req.body.search;
+    console.log("req form app");
+    //var raw = req.body.search;
+    var raw ="a";
     var skip = parseInt(req.body.nskip);
+    console.log(skip);
     var spaceRemoved = raw.replace(/\s/g, '');
     var search = new RegExp('^'+spaceRemoved,'i' );
     async.parallel([
         function (callback) {
 
-            Molecule.find({molecule_name : search},'-_id molecule_name').sort({molecule_name : 1}).skip(skip).limit(10).exec(function (err,result) {
+            Molecule.find({molecule_name : search},'-_id molecule_name').sort({molecule_name : 1}).skip(skip).limit(5).exec(function (err,result) {
                 if(err){
                     console.log(err);
                 }
@@ -3150,7 +3167,8 @@ app.post('/searching', function (req,res) {
             console.log(err);
         }
         else {
-            res.send(results);
+            //res.send(results);
+            res.send({message : 'molecule list', result : results});
 
             console.log(results);
         }
@@ -3288,10 +3306,12 @@ app.post('/searching', function (req,res) {
 // });
 
 
+
+
 //==========================Database connection===========================
 
 //data base connection and opening port
-var db = 'mongodb://localhost/final';
+var db = 'mongodb://localhost/ApniCare';
 mongoose.connect(db, {useMongoClient: true});
 
 

@@ -1,0 +1,11 @@
+doctype html
+html
+    head
+    body
+        h1 Enter medicine details
+        form(action='/information', method='POST')
+            | Search Disease :
+            input(type='text', name='molecule')
+            br
+            br
+            input(type='submit', name='submit')
