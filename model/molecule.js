@@ -5,7 +5,7 @@ var Molecule = new Schema({
     //about molecule
     molecule_name : {type : String},
     drug_categories : {type : String},
-    description : [{type : String}],
+    description : {type : String},
     // pharmacokinetics
     absorption : {type : String},
     distribution : {type :String},

@@ -1708,11 +1708,11 @@ app.post('/disease',function (req,res) {
 
 
 // molecule details
-app.get('/molecule',function (req,res) {
+app.get('/#molecule',function (req,res) {
     res.render('molecule');
 });
 
-app.post('/molecules',function (req,res) {
+app.post('/#molecules',function (req,res) {
     var molecule_name = req.body.molecule_name;
     var drug_categories = req.body.drug_categories;
     var description = req.body.description;
@@ -1742,6 +1742,58 @@ app.post('/molecules',function (req,res) {
         precaution: precaution,
         drug_interaction: drug_interaction,
         food_interaction: food_interaction,
+        oral: oral,
+        intravenous : intravenous,
+        food: food,
+        contradictions: [{subhead: subhead}, {info: info}]
+    });
+    molecule.save(function (err, result) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send("Molecules details added");
+        }
+    });
+});
+
+
+
+// molecule details
+app.get('/molecule',function (req,res) {
+    res.render('molecule');
+});
+
+app.post('/molecules',function (req,res) {
+    var molecule_name = req.body.molecule_name;
+    var drug_categories = req.body.drug_categories;
+    var description = req.body.description;//a
+    var absorption = req.body.absorption;
+    var distribution = req.body.distribution;
+    var metabolism = req.body.metabolism;
+    var excretion = req.body.excretion;
+    var side_effect = req.body.side_effect;//a
+    var precaution = req.body.precaution;//a
+    var other_drug_interaction = req.body.other_drug_interaction; // to be done in front end //a
+    var other_interaction = req.body.other_interaction;//a
+    var oral = req.body.oral;//d
+    var intravenous = req.body.intravenous;//d
+    var food = req.body.food; // only 2 options before/after
+    var subhead = req.body.subhead;
+    var info = req.body.info;
+
+    var molecule = new Molecule({
+        molecule_name: molecule_name,
+        drug_categories: drug_categories,
+        description: description,
+        absorption: absorption,
+        distribution: distribution,
+        metabolism: metabolism,
+        excretion: excretion,
+        side_effect: side_effect,
+        precaution: precaution,
+        other_drug_interaction: other_drug_interaction,
+        other_interaction: other_interaction,
         oral: oral,
         intravenous : intravenous,
         food: food,
