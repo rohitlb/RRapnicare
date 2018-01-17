@@ -1808,8 +1808,11 @@ app.post('/molecules',function (req,res) {
         }
     });
 });
+//================================== search Middleware for Android===================
 
-// search molecule
+
+
+//1 search molecule
 app.get('/search_molecule',function (req,res) {
     var ingredients = req.query.ingredients;
     Molecule.find({molecule_name: ingredients}).exec(function (err, result) {
@@ -1822,6 +1825,96 @@ app.get('/search_molecule',function (req,res) {
         }
     });
 });
+
+//2 search molecule
+app.get('/search_brand',function (req,res) {
+    var brand = req.query.brand;
+    Brand.find({brand_name: brand}).exec(function (err, result) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(result);
+            // result have all the searched data
+        }
+    });
+});
+
+// 2.1 similar brands
+app.get('/search_similar_brand',function (req,res) {
+    var brand = req.query.brand;
+    Brand.find({molecules: brand}).exec(function (err, result) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(result);
+            // result have all the searched data
+        }
+    });
+});
+
+//2.2 read more
+// all the text information would be sent and app would handle the date
+// how much it want to show
+
+
+// 3 categories // its schema is not ready
+
+//4 search disease
+app.get('/search_disease',function (req,res) {
+    var disease = req.query.disease;
+    Disease.find({disease_name : disease}).exec(function (err, result) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(result);
+            // result have all the searched data
+        }
+    });
+});
+
+// 5 search organs
+app.get('/search_organs',function (req,res) {
+    var organs = req.query.organs;
+    Disease.find({organs : organs}).exec(function (err, result) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(result);
+            // result have all the searched data
+        }
+    });
+});
+
+
+
+// 6 search symptoms
+app.get('/search_symptoms',function (req,res) {
+    var symptom = req.query.symptom;
+    Disease.find({symptoms : symptom}).exec(function (err, result) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(result);
+            // result have all the searched data
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
 
 app.get('/inmolecule',function (req,res) {
     var molecule = req.query.molecule;
