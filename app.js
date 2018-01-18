@@ -1810,8 +1810,6 @@ app.post('/molecules',function (req,res) {
 });
 //================================== search Middleware for Android===================
 
-
-
 //1 search molecule
 app.get('/search_molecule',function (req,res) {
     var ingredients = req.query.ingredients;
@@ -1858,7 +1856,6 @@ app.get('/search_similar_brand',function (req,res) {
 // all the text information would be sent and app would handle the date
 // how much it want to show
 
-
 // 3 categories // its schema is not ready
 
 //4 search disease
@@ -1889,8 +1886,6 @@ app.get('/search_organs',function (req,res) {
     });
 });
 
-
-
 // 6 search symptoms
 app.get('/search_symptoms',function (req,res) {
     var symptom = req.query.symptom;
@@ -1904,17 +1899,6 @@ app.get('/search_symptoms',function (req,res) {
         }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
 
 app.get('/inmolecule',function (req,res) {
     var molecule = req.query.molecule;
