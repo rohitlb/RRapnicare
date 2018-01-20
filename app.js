@@ -2000,12 +2000,6 @@ app.post('/search_dos',function (req,res) {
     });
 });
 
-app.get('/inmolecule',function (req,res) {
-    var molecule = req.query.molecule;
-
-
-});
-
 
 //======================= save profile pic ====================
 

@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02bbe590-ee53-44ab-b859-301f44e83c0b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Advanced Architecture/api_server.js" afterPath="$PROJECT_DIR$/Advanced Architecture/api_server.js" />
-      <change beforePath="$PROJECT_DIR$/Rohit searching/app.js" afterPath="$PROJECT_DIR$/Rohit searching/app.js" />
       <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change beforePath="$PROJECT_DIR$/views/searching.pug" afterPath="$PROJECT_DIR$/views/searching.pug" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,100 +15,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.64713067">
+    <splitter split-orientation="horizontal" split-proportion="0.54273504">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="188">
-                  <caret line="1814" column="3" lean-forward="true" selection-start-line="1814" selection-start-column="3" selection-end-line="1814" selection-end-column="3" />
+                <state relative-caret-position="358">
+                  <caret line="2001" column="0" lean-forward="true" selection-start-line="2001" selection-start-column="0" selection-end-line="2001" selection-end-column="0" />
                   <folding>
                     <element signature="e#66059#68741#0" expanded="false" />
                     <element signature="e#68787#70316#0" expanded="false" />
                     <element signature="e#70362#71877#0" expanded="false" />
-                    <element signature="e#71922#71966#0" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="searching.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/searching.pug">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="312">
-                  <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="api_server.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Advanced Architecture/api_server.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="168">
-                  <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="configure.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Advanced Architecture/server/api/configure.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Advanced Architecture/server/api/routes/auth.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="72">
-                  <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Advanced Architecture/controllers/api/auth.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="disease.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/model/disease.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="brand.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/model/brand.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="molecule.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/model/molecule.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -202,11 +117,6 @@
               <item name="RRapnicare" type="b2602c69:ProjectViewProjectNode" />
               <item name="RRapnicare" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="RRapnicare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RRapnicare" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -258,12 +168,12 @@
       <updated>1516197606489</updated>
       <workItem from="1516197607889" duration="3049000" />
       <workItem from="1516280874685" duration="1035000" />
-      <workItem from="1516430016160" duration="3481000" />
+      <workItem from="1516430016160" duration="3608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7565000" />
+    <option name="totallyTimeSpent" value="7692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -375,7 +285,6 @@
             <element signature="e#66059#68741#0" expanded="false" />
             <element signature="e#68787#70316#0" expanded="false" />
             <element signature="e#70362#71877#0" expanded="false" />
-            <element signature="e#71922#71966#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -423,7 +332,6 @@
             <element signature="e#66059#68741#0" expanded="false" />
             <element signature="e#68787#70316#0" expanded="false" />
             <element signature="e#70362#71877#0" expanded="false" />
-            <element signature="e#71922#71966#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -511,15 +419,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="1814" column="3" lean-forward="true" selection-start-line="1814" selection-start-column="3" selection-end-line="1814" selection-end-column="3" />
+        <state relative-caret-position="358">
+          <caret line="2001" column="0" lean-forward="true" selection-start-line="2001" selection-start-column="0" selection-end-line="2001" selection-end-column="0" />
           <folding>
             <element signature="e#66059#68741#0" expanded="false" />
             <element signature="e#68787#70316#0" expanded="false" />
             <element signature="e#70362#71877#0" expanded="false" />
-            <element signature="e#71922#71966#0" expanded="false" />
           </folding>
         </state>
       </provider>
