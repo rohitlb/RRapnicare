@@ -1810,92 +1810,192 @@ app.post('/molecules',function (req,res) {
 });
 //================================== search Middleware for Android===================
 
-//1 search molecule
-app.get('/search_molecule',function (req,res) {
-    var ingredients = req.query.ingredients;
-    Molecule.find({molecule_name: ingredients}).exec(function (err, result) {
-        if (err) {
+app.get('/searching',function (req,res) {
+    res.render('searching');
+});
+
+app.post('/searchall',function (req,res) {
+    var raw = req.body.search;
+    console.log(raw);
+    var spaceRemoved = raw.replace(/\s/g, '');
+    var search = new RegExp('^'+spaceRemoved,'i' );
+    async.parallel([
+        function (callback) {
+            Molecule.find({molecule_name : search},'-_id molecule_name').sort({molecule_name : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(typeof result);
+                    callback(null,result);
+                }
+            });
+        },
+        function (callback) {
+            Brand.find({categories : search},'-_id categories').sort({categories : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(typeof result);
+                    callback(null,result);
+                }
+            });
+        },
+        function (callback) {
+            Brand.find({brand_name : search},'-_id brand_name').sort({brand_name : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(typeof result);
+                    callback(null,result);
+                }
+            });
+        },
+        function (callback) {
+            Disease.find({disease_name : search},'-_id disease_name').sort({disease_name : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(typeof result);
+                    callback(null,result);
+                }
+            });
+        },
+        function (callback) {
+            Disease.find({organs : search},'-_id organs').sort({organs : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(typeof result);
+                    callback(null,result);
+                }
+            });
+        },
+        function (callback) {
+            Disease.find({symptoms : search},'-_id symptoms').sort({disease_name : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(typeof result);
+                    callback(null,result);
+                }
+            });
+        }
+    ],function (err,results) {
+        if(err){
             console.log(err);
         }
         else {
-            console.log(result);
-            res.render('moleculedetails', {data: result});
+            res.send(results);
+
+            console.log(results);
         }
     });
 });
 
-//2 search molecule
-app.get('/search_brand',function (req,res) {
-    var brand = req.query.brand;
-    Brand.find({brand_name: brand}).exec(function (err, result) {
-        if (err) {
+app.post('/search_mbc',function (req,res) {
+    var raw = req.body.search;
+    console.log(raw);
+    var spaceRemoved = raw.replace(/\s/g, '');
+    var search = new RegExp('^'+spaceRemoved,'i' );
+    async.parallel([
+        function (callback) {
+            Molecule.find({molecule_name : search},'-_id molecule_name').sort({molecule_name : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(typeof result);
+                    callback(null,result);
+                }
+            });
+        },
+        function (callback) {
+            Brand.find({categories : search},'-_id categories').sort({categories : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(typeof result);
+                    callback(null,result);
+                }
+            });
+        },
+        function (callback) {
+            Brand.find({brand_name : search},'-_id brand_name').sort({brand_name : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(typeof result);
+                    callback(null,result);
+                }
+            });
+        }
+    ],function (err,results) {
+        if(err){
             console.log(err);
         }
         else {
-            console.log(result);
-            // result have all the searched data
+            res.send(results);
+
+            console.log(results);
         }
     });
 });
 
-// 2.1 similar brands
-app.get('/search_similar_brand',function (req,res) {
-    var brand = req.query.brand;
-    Brand.find({molecules: brand}).exec(function (err, result) {
-        if (err) {
+app.post('/search_dos',function (req,res) {
+    var raw = req.body.search;
+    console.log(raw);
+    var spaceRemoved = raw.replace(/\s/g, '');
+    var search = new RegExp('^'+spaceRemoved,'i' );
+    async.parallel([
+        function (callback) {
+            Disease.find({disease_name : search},'-_id disease_name').sort({disease_name : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(typeof result);
+                    callback(null,result);
+                }
+            });
+        },
+        function (callback) {
+            Disease.find({organs : search},'-_id organs').sort({organs : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(typeof result);
+                    callback(null,result);
+                }
+            });
+        },
+        function (callback) {
+            Disease.find({symptoms : search},'-_id symptoms').sort({disease_name : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(typeof result);
+                    callback(null,result);
+                }
+            });
+        }
+    ],function (err,results) {
+        if(err){
             console.log(err);
         }
         else {
-            console.log(result);
-            // result have all the searched data
-        }
-    });
-});
+            res.send(results);
 
-//2.2 read more
-// all the text information would be sent and app would handle the date
-// how much it want to show
-
-// 3 categories // its schema is not ready
-
-//4 search disease
-app.get('/search_disease',function (req,res) {
-    var disease = req.query.disease;
-    Disease.find({disease_name : disease}).exec(function (err, result) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            console.log(result);
-            // result have all the searched data
-        }
-    });
-});
-
-// 5 search organs
-app.get('/search_organs',function (req,res) {
-    var organs = req.query.organs;
-    Disease.find({organs : organs}).exec(function (err, result) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            console.log(result);
-            // result have all the searched data
-        }
-    });
-});
-
-// 6 search symptoms
-app.get('/search_symptoms',function (req,res) {
-    var symptom = req.query.symptom;
-    Disease.find({symptoms : symptom}).exec(function (err, result) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            console.log(result);
-            // result have all the searched data
+            console.log(results);
         }
     });
 });

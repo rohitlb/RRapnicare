@@ -2281,7 +2281,9 @@ app.get('/searching',function (req,res) {
 });
 
 app.post('/searching',function (req,res) {
+
     console.log("app");
+    console.log("here");
 
     var raw = req.body.search;
 
