@@ -2426,6 +2426,7 @@ app.post('/searching',function (req,res) {
 
 // search with filter
 console.log("search");
+
 app.post('filtersearch', function (req,res) {
     var filt = req.body.filt;
     var raw = req.body.search;

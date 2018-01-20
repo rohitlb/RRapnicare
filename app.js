@@ -2000,6 +2000,80 @@ app.post('/search_dos',function (req,res) {
     });
 });
 
+app.post('/filtersearch', function (req,res) {
+    var filt = req.body.filter;
+    var raw = req.body.search;
+    var spaceRemoved = raw.replace(/\s/g, '');
+    var search = new RegExp(spaceRemoved, 'i');
+    switch (filt){
+        case "molecule_name"   :
+            Molecule.find({molecule_name : search},'-_id molecule_name').sort({molecule_name : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    res.send(result);
+                }
+            });
+            break;
+
+        case "categories"   :
+            Brand.find({categories : search},'-_id categories').sort({categories : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    res.send(result);
+                }
+            });
+            break;
+
+        case "brand_name"  :
+            Brand.find({brand_name : search},'-_id brand_name').sort({brand_name : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    res.send(result);
+                }
+            });
+            break;
+
+        case "disease_name"   :
+            Disease.find({disease_name : search},'-_id disease_name').sort({disease_name : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    res.send(result);
+                }
+            });
+            break;
+
+        case "organs"  :
+            Disease.find({organs : search},'-_id organs').sort({organs : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    res.send(result);
+                }
+            });
+            break;
+
+        case "symptoms"  :
+            Disease.find({symptoms : search},'-_id symptoms').sort({symptoms : 1}).exec(function (err,result) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    res.send(result);
+                }
+            });
+            break;
+        default : res.send({result : "don't even dare to mess up with my code"});
+    }
+});
 
 //======================= save profile pic ====================
 
@@ -3547,5 +3621,3 @@ database.on('open', function () {
         console.log('server connected to http:localhost:' + app.get('port'));
     });
 });
-
-
