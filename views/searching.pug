@@ -3,12 +3,8 @@ html
     head
     body
         h1 Enter medicine details
-        form(action='/search_mbc', method='POST')
+        form(action='/searchall', method='POST')
             | Search Disease :
-            input(type='text', name='filt')
-            br
-            | number of skips :
-            input(type='text', name='nskip')
-
+            input(type='text', name='search')
             br
             input(type='submit', name='submit')

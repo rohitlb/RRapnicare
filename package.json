@@ -21,6 +21,7 @@
     "mongoose": "^4.13.9",
     "multer": "^1.3.0",
     "pug": "^2.0.0-rc.4",
+    "regex": "^0.1.1",
     "request": "^2.83.0",
     "serve-favicon": "^2.4.5",
     "thread-sleep": "^2.0.0"

@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 var multer = require('multer');
 var promise = require('bluebird');
 var sleep = require('thread-sleep');
+var Regex = require("regex");
 var session = require('express-session');
 var expressValidator = require('express-validator');
 var cookieParser = require('cookie-parser');
