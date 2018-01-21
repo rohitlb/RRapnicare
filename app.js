@@ -41,7 +41,7 @@ var app = express();
 
 var store = new mongoDBStore({
     //uri : 'mongodb://localhost/ApniCare',
-    uri : 'mongodb://localhost/RRapnicare',
+    uri : 'mongodb://localhost/ApniCare',
 
     collection : 'mySessions'
 });
@@ -205,7 +205,7 @@ app.post('/VerifyOTP',function (req, res) {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         var temp = JSON.parse(body);
-        res.send({message: temp.Status })
+        res.send({message: temp.Status });
         });
 });
 
@@ -1808,6 +1808,7 @@ app.post('/molecules',function (req,res) {
         }
     });
 });
+
 //================================== search Middleware for Android===================
 
 app.get('/searching',function (req,res) {
@@ -3599,7 +3600,7 @@ app.post('/searching', function (req,res) {
 //==========================Database connection===========================
 
 //data base connection and opening port
-var db = 'mongodb://localhost/RRapnicare';
+var db = 'mongodb://localhost/ApniCare';
 mongoose.connect(db, {useMongoClient: true});
 
 
