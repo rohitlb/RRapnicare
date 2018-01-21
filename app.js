@@ -41,7 +41,7 @@ var app = express();
 
 var store = new mongoDBStore({
     //uri : 'mongodb://localhost/ApniCare',
-    uri : 'mongodb://localhost/ApniCare',
+    uri : 'mongodb://localhost/Apni',
 
     collection : 'mySessions'
 });
@@ -1895,103 +1895,109 @@ app.post('/searchall',function (req,res) {
 });
 
 app.post('/search_mbc',function (req,res) {
+    console.log("search_mbc");
+
     var raw = req.body.search;
     var skip = parseInt(req.body.nskip);
     var spaceRemoved = raw.replace(/\s/g, '');
     var search = new RegExp('^'+spaceRemoved,'i' );
-    async.parallel([
-        function (callback) { // gives molecule_name sorted list
-            Molecule.find({molecule_name : search},'-_id molecule_name').sort({molecule_name : 1}).skip(skip).limit(10).exec(function (err,result) {
-                if(err){
+    async.parallel({
+        molecules:  function (callback) { // gives molecule_name sorted list
+            Molecule.find({molecule_name: search}, '-_id molecule_name').sort({molecule_name: 1}).skip(skip).limit(10).exec(function (err, result) {
+                if (err) {
                     console.log(err);
                 }
-                else{
-                    callback(null,result);
+                else {
+                    callback(null, result);
                 }
             });
         },
-        function (callback) { // gives categories sorted list
-            Brand.find({categories : search},'-_id categories').sort({categories : 1}).skip(skip).limit(10).exec(function (err,result) {
-                if(err){
+        categories:  function (callback) { // gives categories sorted list
+            Brand.find({categories: search}, '-_id categories').sort({categories: 1}).skip(skip).limit(10).exec(function (err, result) {
+                if (err) {
                     console.log(err);
                 }
-                else{
-                    callback(null,result);
+                else {
+                    callback(null, result);
                 }
             });
         },
-        function (callback) { // gives categories sorted list
-            Brand.find({brand_name : search},'-_id categories').sort({brand_name : 1}).skip(skip).limit(10).exec(function (err,result) {
-                if(err){
+        brands: function (callback) { // gives categories sorted list
+            Brand.find({brand_name: search}, '-_id brand_name').sort({brand_name: 1}).skip(skip).limit(10).exec(function (err, result) {
+                if (err) {
                     console.log(err);
                 }
-                else{
-                    callback(null,result);
+                else {
+                    callback(null,  result);
                 }
             });
         }
-    ],function (err,results) {
+    },function (err,results) {
         if(err){
             console.log(err);
         }
         else {
-            res.send(results);
+            res.send({"search_mbc" : results});
 
-            console.log(results);
+            console.log({"search_mbc" : results});
         }
     });
 });
 
 app.post('/search_dos',function (req,res) {
+    console.log("search_dos");
+
     var raw = req.body.search;
     var skip = parseInt(req.body.nskip);
     console.log(raw);
     var spaceRemoved = raw.replace(/\s/g, '');
     var search = new RegExp('^'+spaceRemoved,'i' );
-    async.parallel([
-        function (callback) { // gives disease_name sorted list
-            Disease.find({disease_name : search},'-_id disease_name').sort({disease_name : 1}).skip(skip).limit(10).exec(function (err,result) {
-                if(err){
+    async.parallel({
+        diseases: function (callback) { // gives disease_name sorted list
+            Disease.find({disease_name: search}, '-_id disease_name').sort({disease_name: 1}).skip(skip).limit(10).exec(function (err, result) {
+                if (err) {
                     console.log(err);
                 }
-                else{
-                    callback(null,result);
+                else {
+                    callback(null, result);
                 }
             });
         },
-        function (callback) { // gives organs sorted list
-            Disease.find({organs : search},'-_id organs').sort({organs : 1}).skip(skip).limit(10).exec(function (err,result) {
-                if(err){
+        organs: function (callback) { // gives organs sorted list
+            Disease.find({organs: search}, '-_id organs').sort({organs: 1}).skip(skip).limit(10).exec(function (err, result) {
+                if (err) {
                     console.log(err);
                 }
-                else{
-                    callback(null,result);
+                else {
+                    callback(null, result);
                 }
             });
         },
-        function (callback) { // gives symptoms sorted list
-            Disease.find({symptoms : search},'-_id symptoms').sort({disease_name : 1}).skip(skip).limit(10).exec(function (err,result) {
-                if(err){
+        symptoms: function (callback) { // gives symptoms sorted list
+            Disease.find({symptoms: search}, '-_id symptoms').sort({symptoms: 1}).skip(skip).limit(10).exec(function (err, result) {
+                if (err) {
                     console.log(err);
                 }
-                else{
-                    callback(null,result);
+                else {
+                    callback(null, result);
                 }
             });
         }
-    ],function (err,results) {
+    },function (err,results) {
         if(err){
             console.log(err);
         }
         else {
-            res.send(results);
+            res.send({"search_dos" : results});
 
-            console.log(results);
+            console.log({"search_dos" : results});
         }
     });
 });
 
 app.post('/filtersearch', function (req,res) {
+    console.log("filter");
+
     var filt = req.body.filter;
     var raw = req.body.search;
     var skip = parseInt(req.body.nskip);
@@ -2004,7 +2010,7 @@ app.post('/filtersearch', function (req,res) {
                     console.log(err);
                 }
                 else{
-                    res.send(result);
+                    res.send({"molecules" : result});
                 }
             });
             break;
@@ -2015,7 +2021,7 @@ app.post('/filtersearch', function (req,res) {
                     console.log(err);
                 }
                 else{
-                    res.send(result);
+                    res.send({"categories" :result});
                 }
             });
             break;
@@ -2026,7 +2032,7 @@ app.post('/filtersearch', function (req,res) {
                     console.log(err);
                 }
                 else{
-                    res.send(result);
+                    res.send({"brand":result});
                 }
             });
             break;
@@ -2037,7 +2043,7 @@ app.post('/filtersearch', function (req,res) {
                     console.log(err);
                 }
                 else{
-                    res.send(result);
+                    res.send({"diseases":result});
                 }
             });
             break;
@@ -2048,7 +2054,7 @@ app.post('/filtersearch', function (req,res) {
                     console.log(err);
                 }
                 else{
-                    res.send(result);
+                    res.send({"organs":result});
                 }
             });
             break;
@@ -2059,7 +2065,7 @@ app.post('/filtersearch', function (req,res) {
                     console.log(err);
                 }
                 else{
-                    res.send(result);
+                    res.send({"symptoms":result});
                 }
             });
             break;
@@ -3600,7 +3606,7 @@ app.post('/searching', function (req,res) {
 //==========================Database connection===========================
 
 //data base connection and opening port
-var db = 'mongodb://localhost/ApniCare';
+var db = 'mongodb://localhost/Apni';
 mongoose.connect(db, {useMongoClient: true});
 
 
