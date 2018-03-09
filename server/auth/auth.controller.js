@@ -85,25 +85,41 @@ export function verifyLoginOTP(req,res) {
 //Internal functions from here
 
 //reset new password here
-
+// keys newpassword , oldpassword
 export function newPassword(req,res) {
+  console.log("here");
   var data = req.body;
+
   if (data.newpassword.length < 1)
-    return res.status(400).json({message: "Password cannot be empty"});
-  jwt.verify(req.token, TOKEN_SECRET, function (err, data) {
-    if (err) {
-      res.status(400).json(err);
-    }
+    return res.status(400).json({message: "Please Enter a new password"});
+
+  User.findOne({phone: data.phone}).exec()
+    .then(user => {
+    if(!user)
+  return res.status(400).json({message: 'This phone number is not registered with us'});
+
+  user.authenticate(data.password, function (authError, authenticated) {
+    if(authError)
+      return res.status(500).json(authError);
+
+    if(!authenticated)
+      return res.status(401).json({message: 'Invalid Credentials'});
     else {
+
       User.update({_id: data._id}, {$set: {password: req.body.newpassword}})
+      User.update({phone: data.phone}, {$set: {password: req.body.newpassword}})
         .then(data => {
-          res.json(data)
-        })
-        .catch(err => {
-          res.status(400).json(err);
-        });
+        res.json(data)
+    })
+    .catch(err => {
+        res.status(400).json(err);
+    });
     }
   });
+})
+.catch(err => {
+    res.status(500).json(err);
+});
 }
 
 
@@ -136,36 +152,6 @@ export function newPassword(req,res) {
 //           });
 //         })
 //         .catch(err => {
-//           res.status(400).json(err);
-//         });
-//     }
-//   });
-// }
-
-// export function newPassword(req,res) {
-//   if (req.body.newpassword.length < 1)
-//     return res.status(400).json({message: "Please Enter a new password"});
-//   jwt.verify(req.token, TOKEN_SECRET, function (err, data) {
-//     if (err) {
-//       res.status(400).json(err);
-//     }
-//     else {
-//       User.findOne({_id : data._id}).exec()
-//         .then(user =>{
-//           console.log(user);
-//           var key = crypto.pbkdf2Sync(req.body.newpassword,user.salt,10000,64,'sha1').toString('base64');
-//           console.log(key);
-//
-//           User.update({_id: data._id}, {$set: {password: key}})
-//             .then(data => {
-//               res.json(data)
-//             })
-//             .catch(err => {
-//               res.status(400).json(err);
-//             });
-//           }
-//         )
-//         .catch(err =>{
 //           res.status(400).json(err);
 //         });
 //     }
