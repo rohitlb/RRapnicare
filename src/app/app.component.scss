@@ -1,0 +1,27 @@
+@import "../styles";
+
+/*.poster{
+  background: linear-gradient(75deg, red 0%,blue 100%);
+  background-size: 200% 200%;
+  color: white;
+  font-size: 20px;
+  padding: 10px 30px;
+  border-radius: 10px;
+
+  height: 200px;
+  width: 500px;
+
+  animation: BackgroundGradient 10s ease infinite;
+}
+
+@keyframes BackgroundGradient {
+  0% {background-position: 0% 0%;}
+  50% {background-position: 50% 50%;}
+  100% {background-position: 0% 0%;}
+}*/
+
+.button {
+  /* other styles */
+  -webkit-filter: url("#filter");
+  filter: url("/#filter");
+}

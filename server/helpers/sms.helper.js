@@ -40,4 +40,3 @@ export function verifyOTP(payload, res, callback) {
     callback(err,null,res);
   });
 }
-
