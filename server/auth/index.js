@@ -9,9 +9,6 @@ var router = express.Router();
 router.post('/login',controller.index);
 router.post('/signupOTP', controller.requestOTP);
 router.post('/signup',controller.create);
-
-//=================================================================================
-
 router.post('/loginOTP',controller.requestLoginOTP);
 router.post('/verifyLoginOTP',controller.verifyLoginOTP);
 

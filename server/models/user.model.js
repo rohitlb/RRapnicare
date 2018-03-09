@@ -80,12 +80,13 @@ UserSchema.pre('save',function (next) {
 
 // UserSchema.pre('update',function (next) {
 //   // handling new/update passwords
+//   if(!this.isModified('password' || !this.isNew('password'))){
+//     return next();
+//   }
 //
-//   console.log("pre "+this.password);
 //   var user = this;
-//   console.log(user);
 //   var password = user._update.$set.password;
-//   console.log("pass "+password);
+//   console.log(password);
 //   if(!validatePresenceOf(password)){
 //     return next(new Error('Invalid Password'));
 //   }
@@ -94,17 +95,13 @@ UserSchema.pre('save',function (next) {
 //     if(saltErr){
 //       return next(saltErr);
 //     }
-//     console.log(password);
-//
 //     this.salt = salt;
-//     console.log(password);
 //     this.encryptPassword(password, (encryptErr,hashedPassword) => {
 //       if(encryptErr){
 //         console.log(encryptErr);
 //         return next(encryptErr);
 //       }
 //       password = hashedPassword;
-//       console.log(password);
 //       return next();
 //     });
 //   });
