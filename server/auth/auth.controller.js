@@ -85,31 +85,10 @@ export function verifyLoginOTP(req,res) {
 //Internal functions from here
 
 //reset new password here
-
-// export function newPassword(req,res) {
-//   var data = req.body;
-//   if (data.newpassword.length < 1)
-//     return res.status(400).json({message: "Password cannot be empty"});
-//   jwt.verify(req.token, TOKEN_SECRET, function (err, data) {
-//     if (err) {
-//       res.status(400).json(err);
-//     }
-//     else {
-//       User.update({_id: data._id}, {$set: {password: req.body.newpassword}})
-//         .then(data => {
-//           res.json(data)
-//         })
-//         .catch(err => {
-//           res.status(400).json(err);
-//         });
-//     }
-//   });
-// }
-
-
+// keys  oldpassword , newpassword
 export function newPassword(req,res) {
-  var datas = req.body;
-  if (datas.newpassword.length< 1)
+  var input = req.body;
+  if (input.newpassword.length< 1)
     return res.status(400).json({message: "Password cannot be empty"});
   jwt.verify(req.token, TOKEN_SECRET, function (err, data) {
     if (err) {
@@ -118,14 +97,14 @@ export function newPassword(req,res) {
     else {
       User.findOne({_id : data._id}).exec()
         .then(user =>{
-          user.authenticate(datas.oldpassword, function (authError, authenticated) {
+          user.authenticate(input.oldpassword, function (authError, authenticated) {
             if(authError)
               return res.status(500).json(authError);
 
             if(!authenticated)
               return res.status(401).json({message: 'Invalid Credentials'});
             else{
-              User.update({_id: data._id}, {$set: {password: datas.newpassword}})
+              User.update({_id: data._id}, {$set: {password: input.newpassword}})
                 .then(data => {
                   res.json(data)
                 })
