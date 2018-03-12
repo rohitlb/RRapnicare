@@ -1,0 +1,23 @@
+@import "../styles";
+
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper{
+  background: black;
+  display: grid;
+
+  grid-gap: 20px;
+
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.wrapper > div{
+  background: red;
+  color: white;
+}
+
+.wrapper > div:nth-child(odd){
+  background: #000066;
+}
